@@ -55,13 +55,13 @@
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
-    <Compile Include="PageRechercher.xaml.cs">
+    <Compile Include="Rechercher\PageRechercher.xaml.cs">
       <DependentUpon>PageRechercher.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WindowContacts.xaml.cs">
+    <Compile Include="Contacts\WindowContacts.xaml.cs">
       <DependentUpon>WindowContacts.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WindowEnvoiMail.xaml.cs">
+    <Compile Include="EnvoyerMail\WindowEnvoiMail.xaml.cs">
       <DependentUpon>WindowEnvoiMail.xaml</DependentUpon>
     </Compile>
     <Compile Include="Page1.xaml.cs">
@@ -70,27 +70,27 @@
     <Compile Include="Page2.xaml.cs">
       <DependentUpon>Page2.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WindowPhotos.xaml.cs">
+    <Compile Include="Photos\WindowPhotos.xaml.cs">
       <DependentUpon>WindowPhotos.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WindowReceptionMail.xaml.cs">
+    <Compile Include="RecevoirMails\WindowReceptionMail.xaml.cs">
       <DependentUpon>WindowReceptionMail.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WindowRecherche.xaml.cs">
+    <Compile Include="Rechercher\WindowRecherche.xaml.cs">
       <DependentUpon>WindowRecherche.xaml</DependentUpon>
     </Compile>
     <Compile Include="WindowNav.xaml.cs">
       <DependentUpon>WindowNav.xaml</DependentUpon>
     </Compile>
-    <Page Include="PageRechercher.xaml">
+    <Page Include="Rechercher\PageRechercher.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WindowContacts.xaml">
+    <Page Include="Contacts\WindowContacts.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WindowEnvoiMail.xaml">
+    <Page Include="EnvoyerMail\WindowEnvoiMail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -114,15 +114,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WindowPhotos.xaml">
+    <Page Include="Photos\WindowPhotos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WindowReceptionMail.xaml">
+    <Page Include="RecevoirMails\WindowReceptionMail.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="WindowRecherche.xaml">
+    <Page Include="Rechercher\WindowRecherche.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -210,6 +210,7 @@
   <ItemGroup>
     <Resource Include="Ressources\Icones\retour128.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
