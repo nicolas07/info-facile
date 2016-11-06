@@ -20,31 +20,31 @@
 
 #2d89ef" Click="Button_Click_Recherche">
             <StackPanel Orientation="Vertical">
-                <Image Source="Pictures/rechercher.jpg" Width="70" Height="103" RenderTransformOrigin="1.238,3.131"/>
+                <Image Source="Ressources/Icones/rechercher128.png" Width="70" Height="103" RenderTransformOrigin="1.238,3.131"/>
                 <TextBlock Text="Recherche" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </StackPanel>
         </Button>
         <Button Grid.Column="1" Background="#FF00A300" Click="Button_Click_Envoi_Mail">
             <StackPanel Orientation="Vertical">
-                <Image Source="Pictures/envoyermail.jpg" Width="70" Height="103" RenderTransformOrigin="1.238,3.131"/>
+                <Image Source="Ressources/Icones/envoyermail128.png" Width="70" Height="103" RenderTransformOrigin="1.238,3.131"/>
                 <TextBlock Text="Envoyer un mail" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </StackPanel>
         </Button>
         <Button Grid.Column="2" Background="#ffc40d" Click="Button_Click_Reception_Mail">
             <StackPanel Orientation="Vertical">
-                <Image Source="Pictures/recevoirmail.png" Width="70" Height="103" RenderTransformOrigin="1.238,3.131"/>
+                <Image Source="Ressources/Icones/recevoirmail128.png" Width="70" Height="103" RenderTransformOrigin="1.238,3.131"/>
                 <TextBlock Text="Recevoir ses mails" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </StackPanel>
         </Button>
         <Button Grid.Row="2" Background="#9f00a7" Click="Button_Click_Photos">
             <StackPanel Orientation="Vertical">
-                <Image Source="Pictures/photos.png" Width="70" Height="103" RenderTransformOrigin="1.238,3.131"/>
+                <Image Source="Ressources/Icones/photos128.png" Width="70" Height="103" RenderTransformOrigin="1.238,3.131"/>
                 <TextBlock Text="Photos" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </StackPanel>
         </Button>
         <Button Grid.Column="1" Grid.Row="2" Background="#BF543A24" Click="Button_Click_Contact">
             <StackPanel Orientation="Vertical">
-                <Image Source="Pictures/contact.png" Width="70" Height="103" RenderTransformOrigin="1.238,3.131"/>
+                <Image Source="Ressources/Icones/contacts128.png" Width="70" Height="103" RenderTransformOrigin="1.238,3.131"/>
                 <TextBlock Text="Contacts" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </StackPanel>
         </Button>

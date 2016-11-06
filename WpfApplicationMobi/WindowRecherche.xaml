@@ -21,13 +21,13 @@
 
             <Button Grid.Column="0" BorderThickness="1" Background="White" >
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="Pictures/retour.png" Width="17" Height="23" RenderTransformOrigin="1.238,3.131" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Image Source="Ressources/Icones/retour128.png" Width="17" Height="23" RenderTransformOrigin="1.238,3.131" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     <TextBlock Text="Retour" VerticalAlignment="Center" HorizontalAlignment="Center" />
                 </StackPanel>
             </Button>
             <Button Grid.Column="2" BorderThickness="1" Background="White" >
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="Pictures/annuler.png" Width="17" Height="23" RenderTransformOrigin="1.238,3.131" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Image Source="Ressources/Icones/annuler128.png" Width="17" Height="23" RenderTransformOrigin="1.238,3.131" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     <TextBlock Text="Annuler" VerticalAlignment="Center" HorizontalAlignment="Center" />
                 </StackPanel>
             </Button>
@@ -37,7 +37,7 @@
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="88,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="button" HorizontalAlignment="Left" Margin="109,123,0,0" VerticalAlignment="Top" Width="91" Click="button_Click">
             <StackPanel Orientation="Horizontal">
-                <Image Source="Pictures/icon.png" Width="17" Height="23" RenderTransformOrigin="1.238,3.131"/>
+                <Image Source="Ressources/Icones/icon.png" Width="17" Height="23" RenderTransformOrigin="1.238,3.131"/>
                 <TextBlock Text="Recherche" VerticalAlignment="Center" HorizontalAlignment="Center"/>
             </StackPanel>
         </Button>

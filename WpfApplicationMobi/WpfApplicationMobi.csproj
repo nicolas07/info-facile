@@ -152,22 +152,56 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Pictures\icon.png" />
+    <Resource Include="Ressources\Icones\icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Pictures\retour.png" />
+    <Resource Include="Ressources\Icones\retour96.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Pictures\annuler.png" />
+    <Resource Include="Ressources\Icones\annuler96.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Pictures\envoyermail.jpg" />
-    <Resource Include="Pictures\rechercher.jpg" />
+    <Resource Include="Ressources\Icones\envoyermail48.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Pictures\contact.png" />
-    <Resource Include="Pictures\photos.png" />
-    <Resource Include="Pictures\recevoirmail.png" />
+    <Resource Include="Ressources\Icones\contact48.png" />
+    <Resource Include="Ressources\Icones\recevoirmail64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\Icones\envoyermail48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\Icones\recherche48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\Icones\photos48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\Icones\rechercher64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\Icones\envoyermail64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\Icones\envoyermail128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\Icones\recevoirmail128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\Icones\rechercher128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\Icones\photos128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\Icones\contacts128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\Icones\annuler128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\Icones\retour128.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
