@@ -55,6 +55,9 @@
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Compile Include="PageRechercher.xaml.cs">
+      <DependentUpon>PageRechercher.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowContacts.xaml.cs">
       <DependentUpon>WindowContacts.xaml</DependentUpon>
     </Compile>
@@ -79,6 +82,10 @@
     <Compile Include="WindowNav.xaml.cs">
       <DependentUpon>WindowNav.xaml</DependentUpon>
     </Compile>
+    <Page Include="PageRechercher.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WindowContacts.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

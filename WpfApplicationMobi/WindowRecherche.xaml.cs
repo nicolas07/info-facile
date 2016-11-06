@@ -23,18 +23,26 @@ namespace WpfApplicationMobi
         public WindowRecherche()
         {
             InitializeComponent();
+            //On charge la page dans le frame de la Window
+            FrameRecherche.NavigationService.Navigate(new Uri("/PageRechercher.xaml", UriKind.Relative));
 
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void ButtonRetour_Click(object sender, RoutedEventArgs e)
         {
-            //Process.Start("http://google.fr/search?q=" + textBox.Text);
+            WindowAccueil winAccueil = new WindowAccueil();
+            //Affichage de la page Accueil
+            winAccueil.Show();
+            //Fermeture de la WindowRecherche
+            this.Close();
         }
 
-        private void button_Click_close(object sender, RoutedEventArgs e)
+        private void ButtonAnnuler_Click(object sender, RoutedEventArgs e)
         {
-            WindowAccueil win2 = new WindowAccueil();
-            win2.Show();
+            WindowAccueil winAccueil = new WindowAccueil();
+            //Affichage de la page Accueil
+            winAccueil.Show();
+            //Fermeture de la WindowRecherche
             this.Close();
         }
     }
