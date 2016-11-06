@@ -7,39 +7,29 @@
         mc:Ignorable="d"
         Title="Recherche" Height="300" Width="300"
         WindowStartupLocation="CenterScreen" WindowState="Maximized">
-
     <Grid>
-        <Grid Margin="0,0,0,243">
-            <Grid.RowDefinitions>
-                
-            </Grid.RowDefinitions>
+        <Grid HorizontalAlignment="Stretch" Height="50" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="100" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="Auto" MinWidth="91"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto" MinWidth="91"/>
             </Grid.ColumnDefinitions>
+
 
             <Button Grid.Column="0" BorderThickness="1" Background="White" >
                 <StackPanel Orientation="Horizontal">
                     <Image Source="Ressources/Icones/retour128.png" Width="17" Height="23" RenderTransformOrigin="1.238,3.131" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <TextBlock Text="Retour" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    <TextBlock Text="Retour" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"/>
                 </StackPanel>
             </Button>
             <Button Grid.Column="2" BorderThickness="1" Background="White" >
                 <StackPanel Orientation="Horizontal">
                     <Image Source="Ressources/Icones/annuler128.png" Width="17" Height="23" RenderTransformOrigin="1.238,3.131" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    <TextBlock Text="Annuler" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    <TextBlock Text="Annuler" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"/>
                 </StackPanel>
             </Button>
-
         </Grid>
 
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="88,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="button" HorizontalAlignment="Left" Margin="109,123,0,0" VerticalAlignment="Top" Width="91" Click="button_Click">
-            <StackPanel Orientation="Horizontal">
-                <Image Source="Ressources/Icones/icon.png" Width="17" Height="23" RenderTransformOrigin="1.238,3.131"/>
-                <TextBlock Text="Recherche" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-            </StackPanel>
-        </Button>
+        <Frame x:Name="FrameRecherche" Content="Frame" Margin="10,63,10,10" NavigationUIVisibility="Hidden" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalAlignment="Center" VerticalAlignment="Center" />
     </Grid>
 </Window>

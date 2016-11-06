@@ -28,7 +28,7 @@ namespace WpfApplicationMobi
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start("http://google.fr/search?q=" + textBox.Text);
+            //Process.Start("http://google.fr/search?q=" + textBox.Text);
         }
 
         private void button_Click_close(object sender, RoutedEventArgs e)
