@@ -56,6 +56,10 @@
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
     <Compile Include="Contacts\Contact.cs" />
+    <Compile Include="Contacts\NavigateContact.cs" />
+    <Compile Include="Contacts\PageDetailsContact.xaml.cs">
+      <DependentUpon>PageDetailsContact.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Contacts\PageListeContacts.xaml.cs">
       <DependentUpon>PageListeContacts.xaml</DependentUpon>
     </Compile>
@@ -86,6 +90,10 @@
     <Compile Include="WindowNav.xaml.cs">
       <DependentUpon>WindowNav.xaml</DependentUpon>
     </Compile>
+    <Page Include="Contacts\PageDetailsContact.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Contacts\PageListeContacts.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

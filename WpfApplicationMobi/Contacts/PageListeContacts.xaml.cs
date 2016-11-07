@@ -39,13 +39,6 @@ namespace WpfApplicationMobi.Contacts
             listViewContacts.SelectedIndex = 0;
             listViewContacts.Focus();
 
-            //Affichage details 1er contact
-            Contact contact = listViewContacts.Items.GetItemAt(0) as Contact;
-            labelEmail.Content = contact.Email;
-            labelNom.Content = contact.Nom;
-            labelTelephone.Content = contact.NumeroTelephone;
-            image_Contact.Source = new BitmapImage(new Uri(contact.Image, UriKind.Relative ));
-
         }
 
         private void button_Precedent_Click(object sender, RoutedEventArgs e)
@@ -81,14 +74,17 @@ namespace WpfApplicationMobi.Contacts
                 listBoxItem.Focus();
             }
         }
-
-        private void listViewContacts_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        
+        private void ListViewItem_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            Contact contact = listViewContacts.Items.GetItemAt(listViewContacts.SelectedIndex) as Contact;
-            labelEmail.Content = contact.Email;
-            labelNom.Content = contact.Nom;
-            labelTelephone.Content = contact.NumeroTelephone;
-            image_Contact.Source = new BitmapImage(new Uri(contact.Image, UriKind.Relative));
+            var item = sender as ListViewItem;
+            if (item != null && item.IsSelected)
+            {
+                Contact obj = item.DataContext as Contact;
+                NavigateContact.Navigate(this.NavigationService, new Uri("./Contacts/PageDetailsContact.xaml", UriKind.Relative), obj);
+
+            }
         }
+        
     }
 }
