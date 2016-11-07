@@ -55,6 +55,10 @@
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Compile Include="Contacts\Contact.cs" />
+    <Compile Include="Contacts\PageListeContacts.xaml.cs">
+      <DependentUpon>PageListeContacts.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Rechercher\PageRechercher.xaml.cs">
       <DependentUpon>PageRechercher.xaml</DependentUpon>
     </Compile>
@@ -82,6 +86,10 @@
     <Compile Include="WindowNav.xaml.cs">
       <DependentUpon>WindowNav.xaml</DependentUpon>
     </Compile>
+    <Page Include="Contacts\PageListeContacts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Rechercher\PageRechercher.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -210,7 +218,15 @@
   <ItemGroup>
     <Resource Include="Ressources\Icones\retour128.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Ressources\Icones\contactdefaut128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\Icones\suivant128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\Icones\precedent128.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

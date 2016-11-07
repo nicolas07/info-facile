@@ -21,7 +21,7 @@
                     <TextBlock Text="Retour" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"/>
                 </StackPanel>
             </Button>
-            <Button Grid.Column="2" BorderThickness="1" Background="White" Click="ButtonAnnuler_Click">
+            <Button Grid.Column="2" BorderThickness="1" Background="White" Click="ButtonAnnuler_Click" Height="50" VerticalAlignment="Bottom">
                 <StackPanel Orientation="Horizontal">
                     <Image Source="/Ressources/Icones/annuler128.png" Width="17" Height="23" RenderTransformOrigin="1.238,3.131" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     <TextBlock Text="Annuler" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"/>

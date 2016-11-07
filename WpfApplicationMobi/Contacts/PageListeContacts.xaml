@@ -1,0 +1,40 @@
+﻿<Page x:Class="WpfApplicationMobi.Contacts.PageListeContacts"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApplicationMobi.Contacts"
+      mc:Ignorable="d"
+      Title="PageListeContacts" Height="432.618" Width="757.082">
+
+    <Grid>
+        <ListView x:Name="listViewContacts" HorizontalAlignment="Left" Height="413" Margin="10,10,0,0" VerticalAlignment="Top" Width="319" ScrollViewer.VerticalScrollBarVisibility="Hidden" SelectionChanged="listViewContacts_SelectionChanged">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <Image Source="{Binding Path=Image}" Width="45" Height="50" RenderTransformOrigin="1.238,3.131"/>
+                        <TextBlock Text="{Binding Path=Nom}" FontWeight="Bold" />
+                    </WrapPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button x:Name="button_Precedent" HorizontalAlignment="Left" Margin="345,10,0,0" VerticalAlignment="Top" Width="33" RenderTransformOrigin="0.5,0.5" Height="106" Click="button_Precedent_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Ressources/Icones/precedent128.png" Width="30" Height="60"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="button_Suivant" HorizontalAlignment="Left" Margin="345,317,0,0" VerticalAlignment="Top" Width="33" RenderTransformOrigin="0.5,0.5" Height="106" Click="button_Suivant_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Ressources/Icones/suivant128.png" Width="30" Height="60"/>
+            </StackPanel>
+        </Button>
+        <Image x:Name="image_Contact" Margin="525,10,147,348"/>
+        <Label x:Name="label" Content="Nom :" HorizontalAlignment="Left" Margin="446,90,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="label_Copy" Content="Email :" HorizontalAlignment="Left" Margin="446,136,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="label_Copy1" Content="Téléphone :" HorizontalAlignment="Left" Margin="446,182,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="labelEmail" Content="Label" HorizontalAlignment="Left" Margin="549,136,0,0" VerticalAlignment="Top" Width="132"/>
+        <Label x:Name="labelTelephone" Content="Label" HorizontalAlignment="Left" Margin="549,182,0,0" VerticalAlignment="Top" Width="132"/>
+        <Label x:Name="labelNom" Content="Label" HorizontalAlignment="Left" Margin="549,90,0,0" VerticalAlignment="Top" Width="132"/>
+
+    </Grid>
+</Page>
