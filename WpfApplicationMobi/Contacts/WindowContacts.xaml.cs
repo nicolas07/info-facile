@@ -28,13 +28,29 @@ namespace WpfApplicationMobi
 
         private void ButtonRetour_Click(object sender, RoutedEventArgs e)
         {
-           //TO DO : GEstion de bouton annuler en fonction de la page affichée
+            //TO DO : GEstion de bouton annuler en fonction de la page affichée
+            var current_page = FrameContacts.NavigationService.Content.GetType().Name.ToString();
+
+            //Retour Page Details Contact vers Page Liste Contacts
+            if (current_page.Equals("PageDetailsContact")) {
+                FrameContacts.NavigationService.Navigate(new Uri("./Contacts/PageListeContacts.xaml", UriKind.Relative));
+            }
+
+            //Retour Page Liste Contacts vers Window Accueil
+            if (current_page.Equals("PageListeContacts"))
+            {
+                WindowAccueil winAccueil = new WindowAccueil();
+                //Affichage de la WindowAccueil
+                winAccueil.Show();
+                //Fermeture de la WindowContacts
+                this.Close();
+            }
         }
 
         private void ButtonAnnuler_Click(object sender, RoutedEventArgs e)
         {
             WindowAccueil winAccueil = new WindowAccueil();
-            //Affichage de la page Accueil
+            //Affichage de la WindowAccueil
             winAccueil.Show();
             //Fermeture de la WindowContacts
             this.Close();
