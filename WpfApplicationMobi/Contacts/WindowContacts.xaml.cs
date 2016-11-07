@@ -22,6 +22,22 @@ namespace WpfApplicationMobi
         public WindowContacts()
         {
             InitializeComponent();
+            //On charge la page dans le frame de la Window
+            FrameContacts.NavigationService.Navigate(new Uri("./Contacts/PageListeContacts.xaml", UriKind.Relative));
+        }
+
+        private void ButtonRetour_Click(object sender, RoutedEventArgs e)
+        {
+           //TO DO : GEstion de bouton annuler en fonction de la page affichée
+        }
+
+        private void ButtonAnnuler_Click(object sender, RoutedEventArgs e)
+        {
+            WindowAccueil winAccueil = new WindowAccueil();
+            //Affichage de la page Accueil
+            winAccueil.Show();
+            //Fermeture de la WindowContacts
+            this.Close();
         }
     }
 }
