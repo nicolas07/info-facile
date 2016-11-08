@@ -5,10 +5,14 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfApplicationMobi.EnvoyerMail"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="341.143" d:DesignWidth="478.286"
       Title="PageSaisieObjet">
 
     <Grid>
-        
+        <Label x:Name="label" Content="Objet" HorizontalAlignment="Left" Margin="55,75,0,0" VerticalAlignment="Top" Width="60"/>
+        <TextBox x:Name="textBox_Objet" HorizontalAlignment="Left" Height="23" Margin="149,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" TextChanged="TextBox_TextChanged"/>
+        <Button x:Name="button_Suivant_Etape" Content="Suivant" HorizontalAlignment="Left" Margin="360,75,0,0" VerticalAlignment="Top" Width="75" Click="button_Suivant_Etape_Click"/>
+        <Label x:Name="label_Erreur" HorizontalAlignment="Left" Margin="149,46,0,0" VerticalAlignment="Top" Width="190" Foreground="Red"/>
+
     </Grid>
 </Page>

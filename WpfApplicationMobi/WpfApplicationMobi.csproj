@@ -68,6 +68,9 @@
     <Compile Include="EnvoyerMail\PageSaisieDestinataire.xaml.cs">
       <DependentUpon>PageSaisieDestinataire.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EnvoyerMail\PageSaisieMessage.xaml.cs">
+      <DependentUpon>PageSaisieMessage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EnvoyerMail\PageSaisieObjet.xaml.cs">
       <DependentUpon>PageSaisieObjet.xaml</DependentUpon>
     </Compile>
@@ -107,6 +110,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EnvoyerMail\PageSaisieDestinataire.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EnvoyerMail\PageSaisieMessage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -24,5 +24,24 @@ namespace WpfApplicationMobi.EnvoyerMail
         {
             InitializeComponent();
         }
+
+        private void button_Suivant_Etape_Click(object sender, RoutedEventArgs e)
+        {
+            Mail mail = NavigateMail.GetNavigationData(this.NavigationService);
+            if (textBox_Objet.Text.Length > 0)
+            {
+                mail.Objet = textBox_Objet.Text;
+
+                NavigateMail.Navigate(this.NavigationService, new Uri("./EnvoyerMail/PageSaisieMessage.xaml", UriKind.Relative), mail);
+            }
+            else {
+                label_Erreur.Content = "Veuillez saisir un objet";
+            }
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            label_Erreur.Content = "";
+        }
     }
 }
