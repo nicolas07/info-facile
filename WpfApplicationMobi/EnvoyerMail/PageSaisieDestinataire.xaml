@@ -1,0 +1,43 @@
+﻿<Page x:Class="WpfApplicationMobi.EnvoyerMail.PageSaisieDestinataire"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApplicationMobi.EnvoyerMail"
+      mc:Ignorable="d" 
+      d:DesignHeight="371.359" d:DesignWidth="534.466"
+      Title="PageSaisieDestinataire">
+
+    <Grid>
+        <Label x:Name="label" Content="Destinataire" HorizontalAlignment="Left" Margin="41,38,0,0" VerticalAlignment="Top" Height="30" Width="76"/>
+        <TextBox x:Name="textBox_Destinataire" HorizontalAlignment="Left" Margin="158,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.212,-2.066" Height="Auto" Width="240" TextAlignment="Justify"  VerticalContentAlignment="Center" AcceptsReturn="True" TextChanged="TextBox_TextChanged"/>
+        <ListView x:Name="listViewContacts" HorizontalAlignment="Left" Height="246" Margin="10,115,0,0" VerticalAlignment="Top" Width="319" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <Image Source="{Binding Path=Image}" Width="45" Height="50" RenderTransformOrigin="1.238,3.131"/>
+                        <TextBlock Text="{Binding Path=Nom}" FontWeight="Bold" />
+                    </WrapPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <EventSetter Event="PreviewMouseLeftButtonUp" Handler="ListViewItem_PreviewMouseLeftButtonUp" />
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+        <Button x:Name="button_Precedent" HorizontalAlignment="Left" Margin="334,115,0,0" VerticalAlignment="Top" Width="33" RenderTransformOrigin="0.5,0.5" Height="106" Click="button_Precedent_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Ressources/Icones/precedent128.png" Width="30" Height="60"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="button_Suivant" HorizontalAlignment="Left" Margin="334,255,0,0" VerticalAlignment="Top" Width="33" RenderTransformOrigin="0.5,0.5" Height="106" Click="button_Suivant_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Ressources/Icones/suivant128.png" Width="30" Height="60"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="button_Suivant_Etape" Content="Suivant" HorizontalAlignment="Left" Margin="434,38,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="-0.421,-0.227" Click="button_Suivant_Etape_Click"/>
+        <Label x:Name="label_Erreur" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="2.836,0.728" Margin="158,10,0,0" Width="240" Height="23" Foreground="Red" />
+
+    </Grid>
+</Page>

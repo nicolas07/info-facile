@@ -22,7 +22,22 @@ namespace WpfApplicationMobi
         public WindowEnvoiMail()
         {
             InitializeComponent();
-            System.Diagnostics.Debug.WriteLine(Application.Current.MainWindow.ActualHeight);
+            //On charge la page dans le frame de la Window
+            FrameEnvoiMail.NavigationService.Navigate(new Uri("./EnvoyerMail/PageSaisieDestinataire.xaml", UriKind.Relative));
+        }
+
+        private void ButtonAnnuler_Click(object sender, RoutedEventArgs e)
+        {
+            WindowAccueil winAccueil = new WindowAccueil();
+            //Affichage de la WindowAccueil
+            winAccueil.Show();
+            //Fermeture de la WindowEnvoyerMail
+            this.Close();
+        }
+
+        private void ButtonRetour_Click(object sender, RoutedEventArgs e)
+        {
+            //TO DO : Coder gestion du boutons retour
         }
     }
 }
