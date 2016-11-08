@@ -23,6 +23,12 @@ namespace WpfApplicationMobi.EnvoyerMail
         public PageSaisieObjet()
         {
             InitializeComponent();
+            Mail m = NavigateMail.GetNavigationData(this.NavigationService);
+            if (m != null && m.Objet != null && m.Objet.Length > 0)
+            {
+                textBox_Objet.Text = m.Objet;
+            }
+            
         }
 
         private void button_Suivant_Etape_Click(object sender, RoutedEventArgs e)

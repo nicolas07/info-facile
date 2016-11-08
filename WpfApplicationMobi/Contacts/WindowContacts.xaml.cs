@@ -28,7 +28,6 @@ namespace WpfApplicationMobi
 
         private void ButtonRetour_Click(object sender, RoutedEventArgs e)
         {
-            //TO DO : GEstion de bouton annuler en fonction de la page affichée
             var current_page = FrameContacts.NavigationService.Content.GetType().Name.ToString();
 
             //Retour Page Details Contact vers Page Liste Contacts

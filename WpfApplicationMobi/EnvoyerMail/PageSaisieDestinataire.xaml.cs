@@ -42,6 +42,24 @@ namespace WpfApplicationMobi.EnvoyerMail
             //Selection du premier contact de liste
             listViewContacts.SelectedIndex = 0;
             listViewContacts.Focus();
+
+            Mail m = NavigateMail.GetNavigationData(this.NavigationService);
+            string dest = "";
+            if ( m != null && m.Destinataires != null && m.Destinataires.Count > 0 ) {
+                
+                foreach (string des in m.Destinataires) {
+                    if (dest != "")
+                    {
+                        dest = string.Concat(dest, ",", des);
+                    }
+                    else {
+                        dest = des;
+                    }
+                    
+                }
+            }
+
+            textBox_Destinataire.Text = dest;
         }
 
         private void button_Precedent_Click(object sender, RoutedEventArgs e)

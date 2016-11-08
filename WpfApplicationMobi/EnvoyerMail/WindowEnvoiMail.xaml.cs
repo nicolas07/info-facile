@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApplicationMobi.EnvoyerMail;
 
 namespace WpfApplicationMobi
 {
@@ -23,7 +24,8 @@ namespace WpfApplicationMobi
         {
             InitializeComponent();
             //On charge la page dans le frame de la Window
-            FrameEnvoiMail.NavigationService.Navigate(new Uri("./EnvoyerMail/PageSaisieDestinataire.xaml", UriKind.Relative));
+            NavigateMail.Navigate(FrameEnvoiMail.NavigationService, new Uri("./EnvoyerMail/PageSaisieDestinataire.xaml", UriKind.Relative), new Mail());
+            //FrameEnvoiMail.NavigationService.Navigate(new Uri("./EnvoyerMail/PageSaisieDestinataire.xaml", UriKind.Relative));
         }
 
         private void ButtonAnnuler_Click(object sender, RoutedEventArgs e)
@@ -38,6 +40,24 @@ namespace WpfApplicationMobi
         private void ButtonRetour_Click(object sender, RoutedEventArgs e)
         {
             //TO DO : Coder gestion du boutons retour
+            string current_page = FrameEnvoiMail.NavigationService.Content.GetType().Name.ToString();
+
+            switch (current_page) {
+                case "PageSaisieObjet":
+                    NavigateMail.Navigate(FrameEnvoiMail.NavigationService, new Uri("./EnvoyerMail/PageSaisieDestinataire.xaml", UriKind.Relative), NavigateMail.GetNavigationData(FrameEnvoiMail.NavigationService));
+                    break;
+
+                case "PageSaisieMessage":
+                    NavigateMail.Navigate(FrameEnvoiMail.NavigationService, new Uri("./EnvoyerMail/PageSaisieObjet.xaml", UriKind.Relative), NavigateMail.GetNavigationData(FrameEnvoiMail.NavigationService));
+                    break;
+                default :
+                    WindowAccueil winAccueil = new WindowAccueil();
+                    //Affichage de la WindowAccueil
+                    winAccueil.Show();
+                    //Fermeture de la WindowEnvoyerMail
+                    this.Close();
+                    break;
+            }
         }
     }
 }
