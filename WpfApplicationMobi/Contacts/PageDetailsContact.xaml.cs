@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfApplicationMobi.EnvoyerMail;
 
 namespace WpfApplicationMobi.Contacts
 {
@@ -38,6 +39,18 @@ namespace WpfApplicationMobi.Contacts
         private void button_EnvoyerEmail_Click(object sender, RoutedEventArgs e)
         {
             //TO DO : REdirection vers la cinématique d'envoi de mail mais uniquement saisie message et siasie PJ
+            Mail mail = new Mail();
+            mail.Destinataires = new List<string>() { labelEmail.Content.ToString() };
+            Uri uri = new Uri("./EnvoyerMail/PageSaisieObjet.xaml", UriKind.Relative);
+
+            WindowEnvoiMail winEnvoiMail = new WindowEnvoiMail(uri, mail);
+            //Affichage de la WindowAccueil
+            winEnvoiMail.Show();
+            //Fermeture de la WindowContact
+            var window = Window.GetWindow(this);
+            ((WindowContacts)window).Close();
+
+            //NavigateMail.Navigate(this.NavigationService, new Uri("./EnvoyerMail/PageSaisieObjet.xaml", UriKind.Relative), mail);
         }
     }
 }

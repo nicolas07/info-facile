@@ -28,6 +28,11 @@ namespace WpfApplicationMobi
             //FrameEnvoiMail.NavigationService.Navigate(new Uri("./EnvoyerMail/PageSaisieDestinataire.xaml", UriKind.Relative));
         }
 
+        public WindowEnvoiMail(Uri uri, Mail m) {
+            InitializeComponent();
+            NavigateMail.Navigate(FrameEnvoiMail.NavigationService,uri, m);
+        }
+
         private void ButtonAnnuler_Click(object sender, RoutedEventArgs e)
         {
             WindowAccueil winAccueil = new WindowAccueil();
