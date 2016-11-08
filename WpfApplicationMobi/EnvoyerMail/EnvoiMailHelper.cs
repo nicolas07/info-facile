@@ -10,7 +10,21 @@ namespace WpfApplicationMobi.EnvoyerMail
 {
     public class EnvoiMailHelper
     {
-        public EnvoiMailHelper() {
+
+        private static EnvoiMailHelper instance;
+
+        private EnvoiMailHelper() { }
+
+        public static EnvoiMailHelper Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new EnvoiMailHelper();
+                }
+                return instance;
+            }
         }
 
         public bool EnvoyerMail(Mail m) {

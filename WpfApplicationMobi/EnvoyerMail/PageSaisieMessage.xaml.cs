@@ -32,7 +32,7 @@ namespace WpfApplicationMobi.EnvoyerMail
             {
                 mail.Message = textBox_Message.Text;
 
-                bool res = new EnvoiMailHelper().EnvoyerMail(mail);
+                bool res = EnvoiMailHelper.Instance.EnvoyerMail(mail);
 
                 mail.estEnvoye = res;
 
