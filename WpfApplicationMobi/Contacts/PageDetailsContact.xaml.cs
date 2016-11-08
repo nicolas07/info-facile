@@ -29,5 +29,15 @@ namespace WpfApplicationMobi.Contacts
             labelTelephone.Content = contact.NumeroTelephone;
             image_Contact.Source = new BitmapImage(new Uri(contact.Image, UriKind.Relative));
         }
+
+        private void button_Appeler_Click(object sender, RoutedEventArgs e)
+        {
+            //TO DO : Lancer appel sur telephone.
+        }
+
+        private void button_EnvoyerEmail_Click(object sender, RoutedEventArgs e)
+        {
+            //TO DO : REdirection vers la cinématique d'envoi de mail mais uniquement saisie message et siasie PJ
+        }
     }
 }

@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfApplicationMobi.Contacts"
       mc:Ignorable="d" 
-      d:DesignHeight="250.208" d:DesignWidth="301.245"
+      d:DesignHeight="250.208" d:DesignWidth="559.758"
       Title="PageDetailsContact">
 
     <Grid>
@@ -17,6 +17,17 @@
         <Label x:Name="labelTelephone" Content="Label" HorizontalAlignment="Left" Margin="137,197,0,0" VerticalAlignment="Top" Width="132"/>
         <Label x:Name="labelNom" Content="Label" HorizontalAlignment="Left" Margin="137,135,0,0" VerticalAlignment="Top" Width="132"/>
         <Image x:Name="image_Contact" HorizontalAlignment="Left" Height="100" Margin="62,10,0,0" VerticalAlignment="Top" Width="100"/>
-
+        <Button x:Name="button_EnvoyerEmail" HorizontalAlignment="Left" Margin="342,172,0,0" VerticalAlignment="Top" Width="191" HorizontalContentAlignment="Stretch" Click="button_EnvoyerEmail_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Ressources/Icones/envoyermail128.png" Width="17" Height="23" RenderTransformOrigin="1.238,3.131" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Text="Envoyer un Mail" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="button_Appeler" HorizontalAlignment="Left" Margin="342,203,0,0" VerticalAlignment="Top" Width="191" HorizontalContentAlignment="Stretch" Click="button_Appeler_Click" Height="31">
+            <StackPanel Orientation="Horizontal" Width="185" Height="31" Margin="0,0,2,0">
+                <Image Source="/Ressources/Icones/appel128.png" Width="17" Height="23" RenderTransformOrigin="1.238,3.131" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Text="Appeler" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+            </StackPanel>
+        </Button>
     </Grid>
 </Page>
