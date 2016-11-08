@@ -24,6 +24,7 @@ namespace WpfApplicationMobi
         public WindowAccueil()
         {
             InitializeComponent();
+            FileHelper.Instance.CreerDossierRacine();
         }
         
         private void Button_Click_Recherche(object sender, RoutedEventArgs e)

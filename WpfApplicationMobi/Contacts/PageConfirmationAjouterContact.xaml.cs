@@ -13,28 +13,27 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApplicationMobi.EnvoyerMail
+namespace WpfApplicationMobi.Contacts
 {
     /// <summary>
-    /// Logique d'interaction pour PageConfirmation.xaml
+    /// Logique d'interaction pour PageConfirmationAjouterContact.xaml
     /// </summary>
-    public partial class PageConfirmation : Page
+    public partial class PageConfirmationAjouterContact : Page
     {
-        public PageConfirmation()
+        public PageConfirmationAjouterContact()
         {
             InitializeComponent();
-            Mail mail = NavigateMail.GetNavigationData(this.NavigationService);
-            if (mail.estEnvoye)
+            Contact c = NavigateContact.GetNavigationData(this.NavigationService);
+            if (c.estAjoute)
             {
                 label_Fin.Foreground = System.Windows.Media.Brushes.Green;
-                label_Fin.Content = "Message bien envoyé";
+                label_Fin.Content = "Contact bien ajouté";
             }
             else
             {
                 label_Fin.Foreground = System.Windows.Media.Brushes.Red;
-                label_Fin.Content = "Mail non envoyé, une erreur s'est produite ! Merci de reessayer plus tard.";
+                label_Fin.Content = "Contact non ajouté, une erreur s'est produite ! Merci de reessayer plus tard.";
             }
-
         }
 
         private void button_Retour_Click(object sender, RoutedEventArgs e)
@@ -42,9 +41,9 @@ namespace WpfApplicationMobi.EnvoyerMail
             WindowAccueil winAccueil = new WindowAccueil();
             //Affichage de la WindowAccueil
             winAccueil.Show();
-            //Fermeture de la WindowEnvoiMail
+            //Fermeture de la WindowContact
             var window = Window.GetWindow(this);
-            ((WindowEnvoiMail)window).Close();
+            ((WindowContacts)window).Close();
         }
     }
 }

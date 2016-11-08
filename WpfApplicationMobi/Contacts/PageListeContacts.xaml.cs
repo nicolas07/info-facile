@@ -23,17 +23,8 @@ namespace WpfApplicationMobi.Contacts
         public PageListeContacts()
         {
             InitializeComponent();
-
-            //Creation d'une liste de contacts factices.
-            List<Contact> listeContacts = new List<Contact>();
-            for (int i = 0; i < 20; i++) {
-                string nom = "Nom Test " + i;
-                string email = "toto@gmail.com " + i;
-                string telephone = "0606060606 " + i;
-                Contact item = new Contact() {Nom = nom, Email = email, NumeroTelephone = telephone, Image = "/Ressources/Icones/contactdefaut128.png" };
-                listeContacts.Add(item);
-            }
-            listViewContacts.ItemsSource = listeContacts;
+            
+            listViewContacts.ItemsSource = FileHelper.Instance.LireFichierConfigContacts();
 
             //Selection du premier contact de liste
             listViewContacts.SelectedIndex = 0;
@@ -85,6 +76,10 @@ namespace WpfApplicationMobi.Contacts
 
             }
         }
-        
+
+        private void button_Ajouter_Click(object sender, RoutedEventArgs e)
+        {
+            NavigateContact.Navigate(this.NavigationService, new Uri("./Contacts/PageAjouterContact.xaml", UriKind.Relative), null);
+        }
     }
 }

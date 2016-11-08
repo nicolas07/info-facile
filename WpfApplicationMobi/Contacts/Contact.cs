@@ -12,6 +12,7 @@ namespace WpfApplicationMobi.Contacts
         public string Email { get; set; }
         public string NumeroTelephone { get; set; }
         public string Image { get; set; }
+        public bool estAjoute { get; set; }
         
     }
 }
