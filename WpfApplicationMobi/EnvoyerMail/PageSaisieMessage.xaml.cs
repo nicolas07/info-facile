@@ -24,5 +24,29 @@ namespace WpfApplicationMobi.EnvoyerMail
         {
             InitializeComponent();
         }
+
+        private void button_Envoyer_Click(object sender, RoutedEventArgs e)
+        {
+            Mail mail = NavigateMail.GetNavigationData(this.NavigationService);
+            if (textBox_Message.Text.Length > 0)
+            {
+                mail.Message = textBox_Message.Text;
+
+                bool res = new EnvoiMailHelper().EnvoyerMail(mail);
+
+                mail.estEnvoye = res;
+
+                NavigateMail.Navigate(this.NavigationService, new Uri("./EnvoyerMail/PageConfirmation.xaml", UriKind.Relative), mail);
+            }
+            else
+            {
+                label_Erreur.Content = "Veuillez saisir un message";
+            }
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            label_Erreur.Content = "";
+        }
     }
 }

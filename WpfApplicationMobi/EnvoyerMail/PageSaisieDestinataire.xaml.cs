@@ -32,7 +32,7 @@ namespace WpfApplicationMobi.EnvoyerMail
             for (int i = 0; i < 20; i++)
             {
                 string nom = "Nom Test " + i;
-                string email = "toto@gmail.com " + i;
+                string email = "nicolas.kleber@telecomnancy.net";
                 string telephone = "0606060606 " + i;
                 Contact item = new Contact() { Nom = nom, Email = email, NumeroTelephone = telephone, Image = "/Ressources/Icones/contactdefaut128.png" };
                 listeContacts.Add(item);
