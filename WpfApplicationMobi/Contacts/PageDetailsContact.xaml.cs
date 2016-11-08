@@ -27,7 +27,7 @@ namespace WpfApplicationMobi.Contacts
             labelEmail.Content = contact.Email;
             labelNom.Content = contact.Nom;
             labelTelephone.Content = contact.NumeroTelephone;
-            image_Contact.Source = new BitmapImage(new Uri(contact.Image, UriKind.Relative));
+            image_Contact.Source = new BitmapImage(new Uri(contact.Image, UriKind.RelativeOrAbsolute));
         }
 
         private void button_Appeler_Click(object sender, RoutedEventArgs e)

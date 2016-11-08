@@ -29,10 +29,28 @@ namespace WpfApplicationMobi.EnvoyerMail
             InitializeComponent();
 
             listViewContacts.ItemsSource = FileHelper.Instance.LireFichierConfigContacts();
+            int count = listViewContacts.Items.Count;
+            if (count == 0)
+            {
+                listViewContacts.Visibility = Visibility.Hidden;
+                button_Suivant.Visibility = Visibility.Hidden;
+                button_Precedent.Visibility = Visibility.Hidden;
+                label_listevide.Visibility = Visibility.Visible;
+                label_listevide.Content = "Aucun contact enregistré trouvé";
+            }
+            else
+            {
+                listViewContacts.Visibility = Visibility.Visible;
+                button_Suivant.Visibility = Visibility.Visible;
+                button_Precedent.Visibility = Visibility.Visible;
+                label_listevide.Visibility = Visibility.Hidden;
 
-            //Selection du premier contact de liste
-            listViewContacts.SelectedIndex = 0;
-            listViewContacts.Focus();
+
+                //Selection du premier contact de liste
+                listViewContacts.SelectedIndex = 0;
+                listViewContacts.Focus();
+
+            }
 
             Mail m = NavigateMail.GetNavigationData(this.NavigationService);
             string dest = "";

@@ -97,8 +97,12 @@ namespace WpfApplicationMobi
                 while ((line = reader.ReadLine()) != null)
                 {
                     string[] words = line.Split(',');
-                    list.Add(new Contact() { Nom = words[0], Image = words[1], Email = words[2], NumeroTelephone = words[3] }); // Add to list.
-                    Console.WriteLine(line); // Write to console.
+                    if (words.Length == 4) {
+                        //Si contact ok
+                        list.Add(new Contact() { Nom = words[0], Image = words[1], Email = words[2], NumeroTelephone = words[3] }); // Add to list.
+                        Console.WriteLine(line); // Write to console.
+                    }
+
                 }
             }
 

@@ -5,10 +5,10 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfApplicationMobi.Contacts"
       mc:Ignorable="d"
-      Title="PageListeContacts" Height="481.947" Width="459.933">
+      Title="PageListeContacts" Height="514.947" Width="472.933">
 
     <Grid>
-        <ListView x:Name="listViewContacts" HorizontalAlignment="Left" Height="413" Margin="12,56,0,0" VerticalAlignment="Top" Width="319" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+        <ListView x:Name="listViewContacts" HorizontalAlignment="Left" Height="413" Margin="14,86,0,0" VerticalAlignment="Top" Width="319" ScrollViewer.VerticalScrollBarVisibility="Hidden">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel>
@@ -23,21 +23,22 @@
                 </Style>
             </ListView.ItemContainerStyle>
         </ListView>
-        <Button x:Name="button_Precedent" HorizontalAlignment="Left" Margin="347,56,0,0" VerticalAlignment="Top" Width="33" RenderTransformOrigin="0.5,0.5" Height="106" Click="button_Precedent_Click">
+        <Button x:Name="button_Precedent" HorizontalAlignment="Left" Margin="349,86,0,0" VerticalAlignment="Top" Width="33" RenderTransformOrigin="0.5,0.5" Height="106" Click="button_Precedent_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Ressources/Icones/precedent128.png" Width="30" Height="60"/>
             </StackPanel>
         </Button>
-        <Button x:Name="button_Suivant" HorizontalAlignment="Left" Margin="347,363,0,0" VerticalAlignment="Top" Width="33" RenderTransformOrigin="0.5,0.5" Height="106" Click="button_Suivant_Click">
+        <Button x:Name="button_Suivant" HorizontalAlignment="Left" Margin="349,393,0,0" VerticalAlignment="Top" Width="33" RenderTransformOrigin="0.5,0.5" Height="106" Click="button_Suivant_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Ressources/Icones/suivant128.png" Width="30" Height="60"/>
             </StackPanel>
         </Button>
-        <Button x:Name="button_Ajouter" HorizontalAlignment="Left" Margin="12,10,0,441" Width="201" RenderTransformOrigin="0.271,1.144" Click="button_Ajouter_Click">
+        <Button x:Name="button_Ajouter" HorizontalAlignment="Left" Margin="12,10,0,467" Width="201" RenderTransformOrigin="0.271,1.144" Click="button_Ajouter_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Ressources/Icones/ajouter128.png" Width="17" Height="23" RenderTransformOrigin="1.238,3.131" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <TextBlock Text="Ajouter un contact" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"/>
             </StackPanel>
         </Button>
+        <Label x:Name="label_listevide" Content="Label" HorizontalAlignment="Left" Margin="14,86,0,0" VerticalAlignment="Top" RenderTransformOrigin="-5.658,0.923" Width="402" Height="54"/>
     </Grid>
 </Page>
