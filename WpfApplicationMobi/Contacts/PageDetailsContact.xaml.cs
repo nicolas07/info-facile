@@ -48,9 +48,6 @@ namespace WpfApplicationMobi.Contacts
             winEnvoiMail.Show();
             //Fermeture de la WindowContact
             var window = Window.GetWindow(this);
-            ((WindowContacts)window).Close();
-
-            //NavigateMail.Navigate(this.NavigationService, new Uri("./EnvoyerMail/PageSaisieObjet.xaml", UriKind.Relative), mail);
         }
     }
 }
