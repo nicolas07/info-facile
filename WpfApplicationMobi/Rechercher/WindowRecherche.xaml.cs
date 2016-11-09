@@ -24,7 +24,7 @@ namespace WpfApplicationMobi
         {
             InitializeComponent();
             //On charge la page dans le frame de la Window
-            FrameRecherche.NavigationService.Navigate(new Uri("/PageRechercher.xaml", UriKind.Relative));
+            FrameRecherche.NavigationService.Navigate(new Uri("./Rechercher/PageRechercher.xaml", UriKind.Relative));
 
         }
 
