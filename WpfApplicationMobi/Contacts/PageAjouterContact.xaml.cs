@@ -41,8 +41,11 @@ namespace WpfApplicationMobi.Contacts
             {
                 // Open document 
                 string filename = dlg.FileName;
-                textBox_Image.Text = filename;
+                string tmp = filename.Substring(filename.LastIndexOf("\\") + 1);
+                textBox_Image.Text = tmp;
                 image_Preview.Source = new BitmapImage(new Uri(filename, UriKind.RelativeOrAbsolute));
+                string dest = System.IO.Path.Combine(FileHelper.Instance.lienimagefolder, tmp);
+                System.IO.File.Copy(filename,dest,true);
             }
         }
 
@@ -56,7 +59,7 @@ namespace WpfApplicationMobi.Contacts
                 c.Email = textBox_Email.Text;
                 c.NumeroTelephone = textBox_Telephone.Text;
 
-                bool res = FileHelper.Instance.AjouterContact(c);
+                bool res = BDDHelper.getInstance().AjouterContact(c);
                 c.estAjoute = res;
 
                 NavigateContact.Navigate(this.NavigationService, new Uri("./Contacts/PageConfirmationAjouterContact.xaml", UriKind.Relative), c);

@@ -23,8 +23,8 @@ namespace WpfApplicationMobi.Contacts
         public PageListeContacts()
         {
             InitializeComponent();
-            
-            listViewContacts.ItemsSource = FileHelper.Instance.LireFichierConfigContacts();
+
+            listViewContacts.ItemsSource = BDDHelper.getInstance().ObtenirContacts();
             int count = listViewContacts.Items.Count;
             if (count == 0) {
                 listViewContacts.Visibility = Visibility.Hidden;
@@ -98,5 +98,6 @@ namespace WpfApplicationMobi.Contacts
         {
             NavigateContact.Navigate(this.NavigationService, new Uri("./Contacts/PageAjouterContact.xaml", UriKind.Relative), null);
         }
+        
     }
 }

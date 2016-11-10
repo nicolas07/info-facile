@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WpfApplicationMobi.Contacts;
+using WpfApplicationMobi.EnvoyerMail;
 
 namespace WpfApplicationMobi
 {
@@ -14,7 +15,8 @@ namespace WpfApplicationMobi
         private static FileHelper instance;
         private static string rootFolder = "InfoFacile";
         private static string fileName = "listeContacts.txt";
-
+        private static string fileMail = "listeMails.txt";
+        public string lienimagefolder = null;
         private FileHelper() { }
 
         public static FileHelper Instance
@@ -56,6 +58,27 @@ namespace WpfApplicationMobi
             {
                 string ProgramFiles = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
                 string MyNewPath = Path.Combine(Path.Combine(ProgramFiles, rootFolder), "Contacts");
+
+                if (!Directory.Exists(MyNewPath))
+                {
+                    Directory.CreateDirectory(MyNewPath);
+                }
+                CreerFichierConfigContacts();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+            }
+        }
+
+        public void CreerDossierImages()
+        {
+            //Création du dossier Contacts dans c:/Users/User/Appdata/Infofacile
+            try
+            {
+                string ProgramFiles = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                string MyNewPath = Path.Combine(Path.Combine(ProgramFiles, rootFolder), "Images");
+                lienimagefolder = MyNewPath;
                 if (!Directory.Exists(MyNewPath))
                 {
                     Directory.CreateDirectory(MyNewPath);
@@ -136,8 +159,95 @@ namespace WpfApplicationMobi
             
         }
 
+        public void CreerDossierMail()
+        {
+            //Création du dossier Contacts dans c:/Users/User/Appdata/Infofacile
+            try
+            {
+                string ProgramFiles = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                string MyNewPath = Path.Combine(Path.Combine(ProgramFiles, rootFolder), "Mails");
+                if (!Directory.Exists(MyNewPath))
+                {
+                    Directory.CreateDirectory(MyNewPath);
+                }
+                CreerFichierMail();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+            }
+        }
 
+        public void CreerFichierMail()
+        {
+            try
+            {
+                string ProgramFiles = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                string MyNewPath = Path.Combine(Path.Combine(Path.Combine(ProgramFiles, rootFolder), "Contacts"), fileMail);
+                if (!File.Exists(MyNewPath))
+                {
+                    File.Create(MyNewPath).Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+            }
+        }
 
+        public List<Mail> LireFichierMail()
+        {
+
+            List<Mail> list = new List<Mail>();
+            string ProgramFiles = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string path = Path.Combine(Path.Combine(Path.Combine(ProgramFiles, rootFolder), "Mails"), fileName);
+            using (StreamReader reader = new StreamReader(path))
+            {
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    string[] words = line.Split(',');
+                    if (words.Length == 4)
+                    {
+                        //Si contact ok
+                        list.Add(new Mail() { Expediteur = words[0], Objet = words[1], DateReception = words[2], estLu = false }); // Add to list.
+                        Console.WriteLine(line); // Write to console.
+                    }
+
+                }
+            }
+
+            return list;
+        }
+
+        public bool AjouterMail(Mail m)
+        {
+
+            bool ok = true;
+
+            try
+            {
+                string ProgramFiles = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                string path = Path.Combine(Path.Combine(Path.Combine(ProgramFiles, rootFolder), "Mails"), fileMail);
+
+                StreamWriter file2 = new StreamWriter(path, true);
+
+                string line = String.Concat(m.Expediteur, ",", m.Objet, ",", m.DateReception, ",", m.estLu);
+
+                // Write the string to a file.
+                file2.WriteLine(line);
+
+                file2.Close();
+            }
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.ToString());
+                ok = false;
+            }
+
+            return ok;
+
+        }
 
 
     }
