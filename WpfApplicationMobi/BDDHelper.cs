@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WpfApplicationMobi.Contacts;
+using WpfApplicationMobi.EnvoyerMail;
 
 namespace WpfApplicationMobi
 {
@@ -17,6 +18,7 @@ namespace WpfApplicationMobi
         private static string utilisateur = "129581";
         private static string mot_de_passe = "pjR427B8My";
         private static string nom_table = "gp_Contacts";
+        private static string nom_table_mails = "gp_Mails";
         private BDDHelper()
         { }
 
@@ -105,6 +107,139 @@ namespace WpfApplicationMobi
             }
 
             return estAjoute;
+        }
+
+        public List<MailRecu> ObtenirMails()
+        {
+            List<MailRecu> listeMails = new List<MailRecu>();
+            try
+            {
+                // Objet de commande
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.CommandText = "SELECT * FROM " + nom_table_mails;
+                cmd.Connection = CreerConnexion();
+
+                // Déclaration DataReader
+                MySqlDataReader dr = null;
+
+                //Ouverture de Connexion MySql
+                cmd.Connection.Open();
+
+                // Liaison DataReader avec la Commande (requete)
+                dr = cmd.ExecuteReader();
+
+                // Tant qu'il y'a des lignes d'enregistrement        
+                while (dr.Read())
+                {
+                    listeMails.Add(new MailRecu() { Expediteur = dr["Expediteur"].ToString(), Objet = dr["Objet"].ToString(), Message = dr["Message"].ToString(), DateReception = (DateTime) dr["DateReception"], estLu = (bool) dr["estLu"]});
+                }
+
+                // Fermeture de la connexion MySql
+                cmd.Connection.Close();
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+
+            return listeMails;
+        }
+
+        public bool AjouterMail(MailRecu m)
+        {
+            bool estAjoute = false;
+            try
+            {
+                // Objet de commande
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.CommandText = "INSERT INTO " + nom_table_mails + " (Expediteur, DateReception, Objet, Message, EstLu) VALUES (@Expediteur,@DateReception,@Objet,@Message,@EstLu)";
+                cmd.Connection = CreerConnexion();
+                cmd.Parameters.AddWithValue("@Expediteur", m.Expediteur);
+                cmd.Parameters.AddWithValue("@DateReception", m.DateReception);
+                cmd.Parameters.AddWithValue("@Objet", m.Objet);
+                cmd.Parameters.AddWithValue("@Message", m.Message);
+                cmd.Parameters.AddWithValue("@EstLu", m.estLu);
+                //Ouverture de Connexion MySql
+                cmd.Connection.Open();
+
+                // Liaison DataReader avec la Commande (requete)
+                cmd.ExecuteNonQuery();
+
+                // Fermeture de la connexion MySql
+                cmd.Connection.Close();
+                estAjoute = true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+
+            return estAjoute;
+        }
+
+        public bool ModifierEtatMail(Mail m) {
+
+            bool estModifie = false;
+            try
+            {
+                // Objet de commande
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.CommandText = "UPDATE " + nom_table_mails + " SET (EstLu) VALUES (@EstLu) WHERE Expediteur=@Expediteur,DateReception=@DateReception";
+                cmd.Connection = CreerConnexion();
+                cmd.Parameters.AddWithValue("@Expediteur", m.Expediteur);
+                cmd.Parameters.AddWithValue("@DateReception", m.DateReception);
+                cmd.Parameters.AddWithValue("@EstLu", !(m.estLu));
+                //Ouverture de Connexion MySql
+                cmd.Connection.Open();
+
+                // Liaison DataReader avec la Commande (requete)
+                cmd.ExecuteNonQuery();
+
+                // Fermeture de la connexion MySql
+                cmd.Connection.Close();
+                estModifie = true;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+
+            return estModifie;
+        }
+
+        public bool TesterExistenceMail(MailRecu m) {
+          
+
+            bool existe = false;
+            try
+            {
+                // Objet de commande
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.CommandText = "SELECT COUNT(*) " + nom_table_mails + " WHERE Expediteur=@Expediteur,DateReception=@DateReception";
+                cmd.Connection = CreerConnexion();
+                cmd.Parameters.AddWithValue("@Expediteur", m.Expediteur);
+                cmd.Parameters.AddWithValue("@DateReception", m.DateReception);
+                //Ouverture de Connexion MySql
+                cmd.Connection.Open();
+
+                // Liaison DataReader avec la Commande (requete)
+                int res = (int)cmd.ExecuteScalar();
+
+                // Fermeture de la connexion MySql
+                cmd.Connection.Close();
+                if (res == 1) {
+                    existe = true;
+                }
+                
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+
+            return existe;
+
         }
 
 

@@ -1,0 +1,15 @@
+﻿<Page x:Class="WpfApplicationMobi.RecevoirMails.PageChargementMail"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApplicationMobi.RecevoirMails"
+      mc:Ignorable="d" d:DesignWidth="597.479"
+      Title="PageChargementMail" Loaded="Page_Loaded" Height="194.118">
+
+    <Grid>
+        <Label x:Name="label" Content="Récupération des e-mails en cours...." HorizontalContentAlignment="Center" Margin="135,50,135,0" VerticalAlignment="Top" Height="26"/>
+        <ProgressBar x:Name="progressBar" Height="38" Margin="135,111,135,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Page>

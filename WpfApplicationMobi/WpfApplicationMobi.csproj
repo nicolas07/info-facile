@@ -36,11 +36,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ActiveUp.Net.Common">
+    <Reference Include="ActiveUp.Net.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=6cceae6a4844c51b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>E:\Téléchargements\ActiveUp.MailSystem_May2013_Binaries\Release\ActiveUp.Net.Common.dll</HintPath>
     </Reference>
-    <Reference Include="ActiveUp.Net.Imap4">
+    <Reference Include="ActiveUp.Net.Imap4, Version=5.0.3454.364, Culture=neutral, PublicKeyToken=9d424b1770e92b68, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>E:\Téléchargements\ActiveUp.MailSystem_May2013_Binaries\Release\ActiveUp.Net.Imap4.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\Téléchargements\mysql-connector-net-6.9.9-noinstall\v4.5\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -61,6 +67,7 @@
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
+    <Compile Include="BDDHelper.cs" />
     <Compile Include="Contacts\Contact.cs" />
     <Compile Include="Contacts\NavigateContact.cs" />
     <Compile Include="Contacts\PageAjouterContact.xaml.cs">
@@ -77,6 +84,7 @@
     </Compile>
     <Compile Include="EnvoyerMail\EnvoiMailHelper.cs" />
     <Compile Include="EnvoyerMail\Mail.cs" />
+    <Compile Include="EnvoyerMail\MailRecu.cs" />
     <Compile Include="EnvoyerMail\NavigateMail.cs" />
     <Compile Include="EnvoyerMail\PageConfirmation.xaml.cs">
       <DependentUpon>PageConfirmation.xaml</DependentUpon>
@@ -91,6 +99,18 @@
       <DependentUpon>PageSaisieObjet.xaml</DependentUpon>
     </Compile>
     <Compile Include="FileHelper.cs" />
+    <Compile Include="RecevoirMails\NavigateReceptionMailTest.cs" />
+    <Compile Include="RecevoirMails\NavigateReceptionMail.cs" />
+    <Compile Include="RecevoirMails\PageChargementMail.xaml.cs">
+      <DependentUpon>PageChargementMail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RecevoirMails\PageDetailMail.xaml.cs">
+      <DependentUpon>PageDetailMail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RecevoirMails\PageListeMails.xaml.cs">
+      <DependentUpon>PageListeMails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RecevoirMails\ReceptionMailHelper.cs" />
     <Compile Include="Rechercher\PageRechercher.xaml.cs">
       <DependentUpon>PageRechercher.xaml</DependentUpon>
     </Compile>
@@ -147,6 +167,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EnvoyerMail\PageSaisieObjet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RecevoirMails\PageChargementMail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RecevoirMails\PageDetailMail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RecevoirMails\PageListeMails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -292,6 +324,17 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Ressources\Icones\ajouter128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="MSHTML">
+      <Guid>{3050F1C5-98B5-11CF-BB82-00AA00BDCE0B}</Guid>
+      <VersionMajor>4</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

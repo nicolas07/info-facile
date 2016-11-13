@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApplicationMobi.EnvoyerMail;
+using WpfApplicationMobi.RecevoirMails;
 
 namespace WpfApplicationMobi
 {
@@ -22,6 +24,37 @@ namespace WpfApplicationMobi
         public WindowReceptionMail()
         {
             InitializeComponent();
+
+            FrameReceptionMail.NavigationService.Navigate(new Uri("./RecevoirMails/PageChargementMail.xaml", UriKind.Relative));
+        }
+
+        private void ButtonRetour_Click(object sender, RoutedEventArgs e)
+        {
+            string current_page = FrameReceptionMail.NavigationService.Content.GetType().Name.ToString();
+
+            switch (current_page)
+            {
+                case "PageDetailMail":
+                    NavigateReceptionMail.Navigate(FrameReceptionMail.NavigationService, new Uri("./RecevoirMails/PageListeMails.xaml", UriKind.Relative), NavigateReceptionMail.GetNavigationData(FrameReceptionMail.NavigationService));
+                    break;
+
+                default:
+                    WindowAccueil winAccueil = new WindowAccueil();
+                    //Affichage de la WindowAccueil
+                    winAccueil.Show();
+                    //Fermeture de la WindowEnvoyerMail
+                    this.Close();
+                    break;
+            }
+        }
+
+        private void ButtonAnnuler_Click(object sender, RoutedEventArgs e)
+        {
+            WindowAccueil winAccueil = new WindowAccueil();
+            //Affichage de la WindowAccueil
+            winAccueil.Show();
+            //Fermeture de la WindowEnvoyerMail
+            this.Close();
         }
     }
 }

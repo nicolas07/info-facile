@@ -13,5 +13,11 @@ namespace WpfApplicationMobi.EnvoyerMail
         public string Objet { get; set; }
         public string Message { get; set; }
         public bool estEnvoye { get; set; }
-    }
+
+        public bool estLu { get; set; }
+
+        public string Expediteur { get; set; }
+
+        public string DateReception { get; set; }
+        }
 }
