@@ -138,6 +138,9 @@
     <Compile Include="WindowNav.xaml.cs">
       <DependentUpon>WindowNav.xaml</DependentUpon>
     </Compile>
+    <Compile Include="WindowSplashScreen.xaml.cs">
+      <DependentUpon>WindowSplashScreen.xaml</DependentUpon>
+    </Compile>
     <Page Include="Contacts\PageAjouterContact.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -227,6 +230,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="WindowNav.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WindowSplashScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

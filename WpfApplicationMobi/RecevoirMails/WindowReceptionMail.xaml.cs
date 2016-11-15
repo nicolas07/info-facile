@@ -25,7 +25,7 @@ namespace WpfApplicationMobi
         {
             InitializeComponent();
 
-            FrameReceptionMail.NavigationService.Navigate(new Uri("./RecevoirMails/PageChargementMail.xaml", UriKind.Relative));
+            FrameReceptionMail.NavigationService.Navigate(new Uri("./RecevoirMails/PageListeMails.xaml", UriKind.Relative));
         }
 
         private void ButtonRetour_Click(object sender, RoutedEventArgs e)

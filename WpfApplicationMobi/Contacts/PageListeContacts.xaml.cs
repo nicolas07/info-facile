@@ -23,8 +23,8 @@ namespace WpfApplicationMobi.Contacts
         public PageListeContacts()
         {
             InitializeComponent();
-
-            listViewContacts.ItemsSource = BDDHelper.getInstance().ObtenirContacts();
+            List<Contact> ct = NavigateContact.getContacts();
+            listViewContacts.ItemsSource = ct;
             int count = listViewContacts.Items.Count;
             if (count == 0) {
                 listViewContacts.Visibility = Visibility.Hidden;

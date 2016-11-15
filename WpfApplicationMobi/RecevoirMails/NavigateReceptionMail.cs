@@ -23,5 +23,9 @@ namespace WpfApplicationMobi.RecevoirMails
         {
             return Data;
         }
+
+        public static void setData(List<MailRecu> data) {
+            Data = data;
+        }
     }
 }

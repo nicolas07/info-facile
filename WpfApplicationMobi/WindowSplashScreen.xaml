@@ -1,0 +1,16 @@
+﻿<Window x:Class="WpfApplicationMobi.WindowSplashScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApplicationMobi"
+        mc:Ignorable="d" Loaded="Page_Loaded"
+        Title="WindowSplashScreen" Height="263.758" Width="404.698">
+    <Grid>
+        <Label x:Name="label" Content="Bienvenue sur l'application InfoFacile" Margin="94,60,95,0" VerticalAlignment="Top" RenderTransformOrigin="2.168,0.524"/>
+        <Label x:Name="label_chargement" Content="" Margin="42,91,41,0" VerticalAlignment="Top" Foreground="Blue"/>
+        <ProgressBar x:Name="progressBar" HorizontalAlignment="Left" Height="32" Margin="94,172,0,0" VerticalAlignment="Top" Width="208"/>
+
+
+    </Grid>
+</Window>

@@ -216,22 +216,24 @@ namespace WpfApplicationMobi
             {
                 // Objet de commande
                 MySqlCommand cmd = new MySqlCommand();
-                cmd.CommandText = "SELECT COUNT(*) " + nom_table_mails + " WHERE Expediteur=@Expediteur,DateReception=@DateReception";
+                cmd.CommandText = "SELECT *  FROM " + nom_table_mails + " WHERE Expediteur=@expediteur AND DateReception=@dateReception" ;
                 cmd.Connection = CreerConnexion();
-                cmd.Parameters.AddWithValue("@Expediteur", m.Expediteur);
-                cmd.Parameters.AddWithValue("@DateReception", m.DateReception);
+                cmd.Parameters.AddWithValue("@expediteur", m.Expediteur);
+                cmd.Parameters.AddWithValue("@dateReception", string.Concat(m.DateReception.Year, "-", m.DateReception.Month, "-", m.DateReception.Day, " ", m.DateReception.Hour, ":", m.DateReception.Minute, ":", m.DateReception.Second));
+
                 //Ouverture de Connexion MySql
                 cmd.Connection.Open();
 
                 // Liaison DataReader avec la Commande (requete)
-                int res = (int)cmd.ExecuteScalar();
+                int count = (int) cmd.ExecuteScalar();
+                
+                if (count > 1) {
+                    existe = true;
+                }
 
                 // Fermeture de la connexion MySql
                 cmd.Connection.Close();
-                if (res == 1) {
-                    existe = true;
-                }
-                
+
             }
             catch (Exception e)
             {
