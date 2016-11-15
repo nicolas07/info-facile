@@ -178,17 +178,17 @@ namespace WpfApplicationMobi
             return estAjoute;
         }
 
-        public bool ModifierEtatMail(Mail m) {
+        public bool ModifierEtatMail(MailRecu m) {
 
             bool estModifie = false;
             try
             {
                 // Objet de commande
                 MySqlCommand cmd = new MySqlCommand();
-                cmd.CommandText = "UPDATE " + nom_table_mails + " SET (EstLu) VALUES (@EstLu) WHERE Expediteur=@Expediteur,DateReception=@DateReception";
+                cmd.CommandText = "UPDATE " + nom_table_mails + " SET EstLu=@EstLu WHERE Expediteur=@Expediteur AND DateReception=@DateReception";
                 cmd.Connection = CreerConnexion();
                 cmd.Parameters.AddWithValue("@Expediteur", m.Expediteur);
-                cmd.Parameters.AddWithValue("@DateReception", m.DateReception);
+                cmd.Parameters.AddWithValue("@DateReception", string.Concat(m.DateReception.Year, "-", m.DateReception.Month, "-", m.DateReception.Day, " ", m.DateReception.Hour, ":", m.DateReception.Minute, ":", m.DateReception.Second));
                 cmd.Parameters.AddWithValue("@EstLu", !(m.estLu));
                 //Ouverture de Connexion MySql
                 cmd.Connection.Open();

@@ -7,9 +7,10 @@
         mc:Ignorable="d" Loaded="Page_Loaded"
         Title="WindowSplashScreen" Height="263.758" Width="404.698">
     <Grid>
-        <Label x:Name="label" Content="Bienvenue sur l'application InfoFacile" Margin="94,60,95,0" VerticalAlignment="Top" RenderTransformOrigin="2.168,0.524"/>
+        <Label x:Name="label" Content="Bienvenue sur l'application InfoFacile" Margin="10,60,10,0" VerticalAlignment="Top" HorizontalContentAlignment="center" RenderTransformOrigin="2.168,0.524"/>
         <Label x:Name="label_chargement" Content="" Margin="42,91,41,0" VerticalAlignment="Top" Foreground="Blue"/>
         <ProgressBar x:Name="progressBar" HorizontalAlignment="Left" Height="32" Margin="94,172,0,0" VerticalAlignment="Top" Width="208"/>
+        <Label x:Name="label_pourcentage" Content="" FontWeight="Bold" HorizontalAlignment="Left" Margin="302,172,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.285,-0.728" Height="32" Width="54"/>
 
 
     </Grid>

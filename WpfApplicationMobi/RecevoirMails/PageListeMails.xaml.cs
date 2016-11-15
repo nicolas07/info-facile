@@ -22,34 +22,21 @@ namespace WpfApplicationMobi.RecevoirMails
     /// </summary>
     public partial class PageListeMails : Page
     {
-        private List<MailRecu> liste_mail_test = null;
+
         public PageListeMails()
         {
             InitializeComponent();
-            //Thread th = new Thread(new ThreadStart(A));
-
-            //th.Start();
-            //th.Join();
-            ////ReceptionMailHelper rc = new ReceptionMailHelper();
             
             listViewEmail.ItemsSource = NavigateReceptionMail.GetNavigationData(this.NavigationService);
         }
-
-        public void  A() {
-            ReceptionMailHelper rc = new ReceptionMailHelper();
-
-            liste_mail_test =  rc.RecupererMails();
-            Application.Current.Resources["mails"] = liste_mail_test;
-        }
-
-
-
+        
         private void ListViewItem_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             var item = sender as ListViewItem;
             if (item != null && item.IsSelected)
             {
                 MailRecu obj = item.DataContext as MailRecu;
+                BDDHelper.getInstance().ModifierEtatMail(obj);
                 NavigateReceptionMailTest.Navigate(this.NavigationService, new Uri("./RecevoirMails/PageDetailMail.xaml", UriKind.Relative), obj);
 
             }

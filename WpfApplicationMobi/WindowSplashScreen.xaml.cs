@@ -42,11 +42,12 @@ namespace WpfApplicationMobi
         {
             this.progressBar.Value = e.ProgressPercentage;
             if (e.ProgressPercentage == 10) {
-
+                label_pourcentage.Content = "10%";
                 label_chargement.Content = "Recuperation des mails";
             }
             if (e.ProgressPercentage == 60)
             {
+                label_pourcentage.Content = "60%";
                 label_chargement.Content = "Recuperation des contacts";
             }
         }

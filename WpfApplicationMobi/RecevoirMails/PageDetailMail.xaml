@@ -5,25 +5,35 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfApplicationMobi.RecevoirMails"
       xmlns:test="clr-namespace:WpfApplicationMobi.RecevoirMails"
-      mc:Ignorable="d" d:DesignWidth="1237.045"
+      mc:Ignorable="d" d:DesignWidth="1311.045"
       Title="PageDetailMail" Height="614.267" >
 
     <Grid>
-        <Label x:Name="label_Expediteur" Content="Label" HorizontalAlignment="Left" Margin="34,24,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.467,-1.025" Width="245"/>
-        <Label x:Name="label_Date" Content="Label" HorizontalAlignment="Left" Margin="34,55,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.467,-1.025" Width="245"/>
-        <Label x:Name="label_Subject" Content="Label" HorizontalAlignment="Left" Margin="34,86,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.467,-1.025" Width="245" Height="62"/>
+        <Label x:Name="label_Expediteur" Content="Label" HorizontalAlignment="Left" Margin="152,24,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.467,-1.025" Width="213"/>
+        <Label x:Name="label_Date" Content="Label" HorizontalAlignment="Left" Margin="152,55,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.467,-1.025" Width="213"/>
+        <Label x:Name="label_Subject" Content="Label" HorizontalAlignment="Left" Margin="152,86,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.467,-1.025" Width="213" Height="62" />
         <WebBrowser HorizontalAlignment="Left" Loaded="MainBrowser_Loaded"
 		    Height="594"
-		    Margin="325,10,0,0"
+		    Margin="395,10,0,0"
 		    VerticalAlignment="Top"
 		    Width="902"
 		    Name="MainBrowser" 
-                                ScrollViewer.CanContentScroll="False"
-            ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
-            ScrollViewer.VerticalScrollBarVisibility="Disabled"
-                    LoadCompleted="MainBrowser_LoadCompleted"/>
-        <Button x:Name="button_Bas" Content="Bas" HorizontalAlignment="Left" Margin="58,243,0,0" VerticalAlignment="Top" Width="75" Click="button_Bas_Click"/>
-        <Button x:Name="button_Haut" Content="Haut" HorizontalAlignment="Left" Margin="58,201,0,0" VerticalAlignment="Top" Width="75" Click="button_Haut_Click"/>
+            ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+            ScrollViewer.VerticalScrollBarVisibility="Hidden"
+            LoadCompleted="MainBrowser_LoadCompleted"/>
+        <Button x:Name="button_Bas" HorizontalAlignment="Left" Margin="332,355,0,0" VerticalAlignment="Top" Width="33" Click="button_Bas_Click" Height="102">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Ressources/Icones/suivant128.png" Width="30" Height="60"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="button_Haut" HorizontalAlignment="Left" Margin="332,227,0,0" VerticalAlignment="Top" Width="33" Click="button_Haut_Click" Height="102">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Ressources/Icones/precedent128.png" Width="30" Height="60"/>
+            </StackPanel>
+        </Button>
+        <Label x:Name="label" Content="Expediteur : " HorizontalAlignment="Left" Margin="10,24,0,0" VerticalAlignment="Top" RenderTransformOrigin="-5.579,-7.885" Width="116"/>
+        <Label x:Name="label_Copy" Content="Date de Reception : " HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" RenderTransformOrigin="-5.579,-7.885" Width="116"/>
+        <Label x:Name="label_Copy1" Content="Objet : " HorizontalAlignment="Left" Margin="10,86,0,0" VerticalAlignment="Top" RenderTransformOrigin="-5.579,-7.885" Width="116"/>
 
     </Grid>
 </Page>

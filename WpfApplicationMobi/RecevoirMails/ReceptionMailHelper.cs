@@ -58,8 +58,12 @@ namespace WpfApplicationMobi.RecevoirMails
 
             foreach (Message email in rep.GetAllMails("inbox"))
             {
+                string message = email.BodyHtml.Text.ToString();
+                if (message.Equals(string.Empty)) {
+                    message = email.BodyText.Text.ToString();
+                }
 
-                liste.Add(new MailRecu() { Expediteur = email.From.Email.ToString(), Message = email.BodyHtml.Text.ToString(), Objet = email.Subject ,estLu =false,DateReception = Convert.ToDateTime(string.Concat(email.Date.Date.ToShortDateString()," ",email.Date.TimeOfDay.ToString()))});
+                liste.Add(new MailRecu() { Expediteur = email.From.Email.ToString(), Message = message, Objet = email.Subject ,estLu =false,DateReception = Convert.ToDateTime(string.Concat(email.Date.Date.ToShortDateString()," ",email.Date.TimeOfDay.ToString()))});
 
             }
 

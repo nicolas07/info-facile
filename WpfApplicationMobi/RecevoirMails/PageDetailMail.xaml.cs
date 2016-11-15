@@ -40,39 +40,10 @@ namespace WpfApplicationMobi.RecevoirMails
 
             m.estLu = true;
         }
-
-
-        private static void HyperlinksSubscriptions(FlowDocument flowDocument)
-        {
-            if (flowDocument == null) return;
-            GetVisualChildren(flowDocument).OfType<Hyperlink>().ToList()
-                     .ForEach(i => i.RequestNavigate += HyperlinkNavigate);
-        }
-
-        private static IEnumerable<DependencyObject> GetVisualChildren(DependencyObject root)
-        {
-            foreach (var child in LogicalTreeHelper.GetChildren(root).OfType<DependencyObject>())
-            {
-                yield return child;
-                foreach (var descendants in GetVisualChildren(child)) yield return descendants;
-            }
-        }
-
-        private static void HyperlinkNavigate(object sender,
-         System.Windows.Navigation.RequestNavigateEventArgs e)
-        {
-            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri));
-            e.Handled = true;
-        }
-
+               
+    
         private void MainBrowser_LoadCompleted(object sender, NavigationEventArgs e)
         {
-            //mshtml.HTMLDocument doc;
-            //doc = (mshtml.HTMLDocument)MainBrowser.Document;
-            //var toto = doc.links;
-            //mshtml.HTMLDocumentEvents2_Event iEvent;
-            //iEvent = (mshtml.HTMLDocumentEvents2_Event)doc;
-            //iEvent.onclick += new mshtml.HTMLDocumentEvents2_onclickEventHandler(ClickEventHandler);
 
             HTMLDocument doc = (mshtml.HTMLDocument)this.MainBrowser.Document;
 
@@ -116,10 +87,9 @@ namespace WpfApplicationMobi.RecevoirMails
 
         private void MainBrowser_Loaded(object sender, RoutedEventArgs e)
         {
-                string script = "document.documentElement.style.overflow ='hidden'";
-                WebBrowser wb = (WebBrowser)sender;
-                wb.InvokeScript("execScript", new Object[] { script, "JavaScript" });
-            
+            mshtml.IHTMLDocument2 documentText = (IHTMLDocument2)MainBrowser.Document;
+            //this will access the document properties 
+            documentText.body.parentElement.style.overflow = "hidden";
         }
     }
 }
