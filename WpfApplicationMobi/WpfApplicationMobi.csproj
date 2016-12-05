@@ -44,12 +44,16 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>E:\Téléchargements\ActiveUp.MailSystem_May2013_Binaries\Release\ActiveUp.Net.Imap4.dll</HintPath>
     </Reference>
+    <Reference Include="ImapX">
+      <HintPath>..\packages\ImapX.2.0.0.18\lib\net452\ImapX.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>E:\Téléchargements\mysql-connector-net-6.9.9-noinstall\v4.5\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -99,6 +103,9 @@
       <DependentUpon>PageSaisieObjet.xaml</DependentUpon>
     </Compile>
     <Compile Include="FileHelper.cs" />
+    <Compile Include="Photos\ListePhotosPage.xaml.cs">
+      <DependentUpon>ListePhotosPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RecevoirMails\NavigateReceptionMailTest.cs" />
     <Compile Include="RecevoirMails\NavigateReceptionMail.cs" />
     <Compile Include="RecevoirMails\PageChargementMail.xaml.cs">
@@ -111,6 +118,7 @@
       <DependentUpon>PageListeMails.xaml</DependentUpon>
     </Compile>
     <Compile Include="RecevoirMails\ReceptionMailHelper.cs" />
+    <Compile Include="RecevoirMails\RecevoirMailHelper.cs" />
     <Compile Include="Rechercher\PageRechercher.xaml.cs">
       <DependentUpon>PageRechercher.xaml</DependentUpon>
     </Compile>
@@ -170,6 +178,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EnvoyerMail\PageSaisieObjet.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Photos\ListePhotosPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -256,6 +268,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -342,6 +355,16 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\Icones\imageicone48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\Icones\precedentphoto128.png" />
+    <Resource Include="Ressources\Icones\suivantphoto128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\Icones\poubelle128.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

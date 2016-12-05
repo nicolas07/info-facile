@@ -22,6 +22,26 @@ namespace WpfApplicationMobi
         public WindowPhotos()
         {
             InitializeComponent();
+
+            FramePhotos.NavigationService.Navigate(new Uri("./Photos/ListePhotosPage.xaml", UriKind.Relative));
+        }
+
+        private void ButtonAnnuler_Click(object sender, RoutedEventArgs e)
+        {
+            WindowAccueil winAccueil = new WindowAccueil();
+            //Affichage de la WindowAccueil
+            winAccueil.Show();
+            //Fermeture de la WindowEnvoyerMail
+            this.Close();
+        }
+
+        private void ButtonRetour_Click(object sender, RoutedEventArgs e)
+        {
+            WindowAccueil winAccueil = new WindowAccueil();
+            //Affichage de la WindowAccueil
+            winAccueil.Show();
+            //Fermeture de la WindowEnvoyerMail
+            this.Close();
         }
     }
 }

@@ -24,7 +24,7 @@ namespace WpfApplicationMobi.RecevoirMails
     {
         private readonly BackgroundWorker worker = new BackgroundWorker();
 
-        private static List<MailRecu> liste_mail_test;
+        private static List<ImapX.Message> liste_mail_test;
 
         public PageChargementMail()
         {
@@ -49,14 +49,14 @@ namespace WpfApplicationMobi.RecevoirMails
         {
             (sender as BackgroundWorker).ReportProgress(35, null);
             
-            ReceptionMailHelper rc = new ReceptionMailHelper();
-            liste_mail_test = rc.RecupererMails();
-            foreach (MailRecu m in liste_mail_test) {
-                if (!(BDDHelper.getInstance().TesterExistenceMail(m))) {
-                    BDDHelper.getInstance().AjouterMail(m);
-                }
+            //ReceptionMailHelper rc = new ReceptionMailHelper();
+            //liste_mail_test = rc.RecupererMails();
+            //foreach (MailRecu m in liste_mail_test) {
+            //    if (!(BDDHelper.getInstance().TesterExistenceMail(m))) {
+            //        BDDHelper.getInstance().AjouterMail(m);
+            //    }
                
-            }
+            //}
             (sender as BackgroundWorker).ReportProgress(80, null);
         }
 

@@ -10,21 +10,21 @@ namespace WpfApplicationMobi.RecevoirMails
 {
     public class NavigateReceptionMail
     {
-        private static List<MailRecu> Data;
+        private static List<ImapX.Message> Data;
 
         public static void Navigate(NavigationService navigationService,
-                                    Uri source, List<MailRecu> data)
+                                    Uri source, List<ImapX.Message> data)
         {
             Data = data;
             navigationService.Navigate(source);
         }
 
-        public static List<MailRecu> GetNavigationData(NavigationService service)
+        public static List<ImapX.Message> GetNavigationData(NavigationService service)
         {
             return Data;
         }
 
-        public static void setData(List<MailRecu> data) {
+        public static void setData(List<ImapX.Message> data) {
             Data = data;
         }
     }

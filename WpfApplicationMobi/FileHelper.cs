@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.IO;
+using System.Management;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,16 +36,17 @@ namespace WpfApplicationMobi
 
         public void CreerDossierRacine()
         {
-            //Création du dossier InfoFacile dans c:/Users/User/Appdata
+            //Création du dossier InfoFacile dans c:/Users/User/InfoFacile
             try
             {
-                string ProgramFiles = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                string ProgramFiles = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
                 string MyNewPath = Path.Combine(ProgramFiles, rootFolder);
                 if (!Directory.Exists(MyNewPath))
                 {
                     Directory.CreateDirectory(MyNewPath);
                 }
                 CreerDossierContacts();
+                CreerDossierImages();
             }
             catch (Exception ex)
             {
@@ -56,7 +59,7 @@ namespace WpfApplicationMobi
             //Création du dossier Contacts dans c:/Users/User/Appdata/Infofacile
             try
             {
-                string ProgramFiles = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                string ProgramFiles = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
                 string MyNewPath = Path.Combine(Path.Combine(ProgramFiles, rootFolder), "Contacts");
 
                 if (!Directory.Exists(MyNewPath))
@@ -76,14 +79,54 @@ namespace WpfApplicationMobi
             //Création du dossier Contacts dans c:/Users/User/Appdata/Infofacile
             try
             {
-                string ProgramFiles = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                string ProgramFiles = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
                 string MyNewPath = Path.Combine(Path.Combine(ProgramFiles, rootFolder), "Images");
                 lienimagefolder = MyNewPath;
                 if (!Directory.Exists(MyNewPath))
                 {
                     Directory.CreateDirectory(MyNewPath);
                 }
-                CreerFichierConfigContacts();
+                CreerDossierImagesPhotos();
+                CreerDossierImagesPhotosPartage();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+            }
+        }
+
+        public void CreerDossierImagesPhotos()
+        {
+            //Création du dossier Contacts dans c:/Users/User/Appdata/Infofacile
+            try
+            {
+                string ProgramFiles = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+                string MyNewPath = Path.Combine(Path.Combine(Path.Combine(ProgramFiles, rootFolder), "Images"),"Photos Perso");
+                if (!Directory.Exists(MyNewPath))
+                {
+                    Directory.CreateDirectory(MyNewPath);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.ToString());
+            }
+        }
+
+        public void CreerDossierImagesPhotosPartage()
+        {
+            //Création du dossier Contacts dans c:/Users/User/Appdata/Infofacile
+            try
+            {
+                string ProgramFiles = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
+                string MyNewPath = Path.Combine(Path.Combine(Path.Combine(ProgramFiles, rootFolder), "Images"), "Photos Tablette");
+                lienimagefolder = MyNewPath;
+                if (!Directory.Exists(MyNewPath))
+                {
+                    Directory.CreateDirectory(MyNewPath);
+
+                }
+
             }
             catch (Exception ex)
             {
@@ -95,7 +138,7 @@ namespace WpfApplicationMobi
         {
             try
             {
-                string ProgramFiles = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                string ProgramFiles = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
                 string MyNewPath = Path.Combine(Path.Combine(Path.Combine(ProgramFiles, rootFolder), "Contacts"), fileName);
                 if (!File.Exists(MyNewPath))
                 {
@@ -112,7 +155,7 @@ namespace WpfApplicationMobi
         {
 
             List<Contact> list = new List<Contact>();
-            string ProgramFiles = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string ProgramFiles = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
             string path = Path.Combine(Path.Combine(Path.Combine(ProgramFiles, rootFolder), "Contacts"), fileName);
             using (StreamReader reader = new StreamReader(path))
             {
@@ -170,7 +213,6 @@ namespace WpfApplicationMobi
                 {
                     Directory.CreateDirectory(MyNewPath);
                 }
-                CreerFichierMail();
             }
             catch (Exception ex)
             {

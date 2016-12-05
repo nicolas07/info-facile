@@ -5,8 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplicationMobi"
         mc:Ignorable="d"
-        Title="WindowPhotos" Height="300" Width="300">
+        Title="Photos" Height="300" Width="300"
+        WindowStartupLocation="CenterScreen" WindowState="Maximized">
     <Grid>
-        
+        <Grid HorizontalAlignment="Stretch" Height="50" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" MinWidth="91"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto" MinWidth="91"/>
+            </Grid.ColumnDefinitions>
+
+
+            <Button Grid.Column="0" BorderThickness="1" Background="White" Click="ButtonRetour_Click" >
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Ressources/Icones/retour128.png" Width="17" Height="23" RenderTransformOrigin="1.238,3.131" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="Retour" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+                </StackPanel>
+            </Button>
+            <Button Grid.Column="2" BorderThickness="1" Background="White" Click="ButtonAnnuler_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/Ressources/Icones/annuler128.png" Width="17" Height="23" RenderTransformOrigin="1.238,3.131" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <TextBlock Text="Annuler" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+                </StackPanel>
+            </Button>
+        </Grid>
+
+        <Frame x:Name="FramePhotos" Content="Frame" Margin="10,63,10,10" NavigationUIVisibility="Hidden" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" HorizontalAlignment="Center" VerticalAlignment="Center" />
     </Grid>
 </Window>
