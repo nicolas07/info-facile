@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplicationMobi"
         mc:Ignorable="d"
-        Title="Contacts" Height="300" Width="300" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+        Title="Contacts" Height="300" Width="300" WindowStartupLocation="CenterScreen" WindowState="Maximized" Icon="/Ressources/Icones/windowicone32.png">
     <Grid>
         <Grid HorizontalAlignment="Stretch" Height="50" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>

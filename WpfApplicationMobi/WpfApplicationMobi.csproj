@@ -366,6 +366,12 @@
   <ItemGroup>
     <Resource Include="Ressources\Icones\poubelle128.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\Icones\windowicone32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ressources\Icones\splash.jpeg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

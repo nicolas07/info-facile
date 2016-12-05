@@ -9,14 +9,14 @@
       Title="PageSaisieDestinataire">
 
     <Grid>
-        <Label x:Name="label" Content="Destinataire" HorizontalAlignment="Left" Margin="41,38,0,0" VerticalAlignment="Top" Height="30" Width="76"/>
-        <TextBox x:Name="textBox_Destinataire" HorizontalAlignment="Left" Margin="158,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.212,-2.066" Height="Auto" Width="240" TextAlignment="Justify"  VerticalContentAlignment="Center" AcceptsReturn="True" TextChanged="TextBox_TextChanged"/>
-        <ListView x:Name="listViewContacts" HorizontalAlignment="Left" Height="246" Margin="10,115,0,0" VerticalAlignment="Top" Width="319" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+        <Label x:Name="label" Content="Destinataire" HorizontalAlignment="Left" Margin="38,36,0,0" VerticalAlignment="Top" Height="30" Width="76"/>
+        <TextBox x:Name="textBox_Destinataire" HorizontalAlignment="Left" Margin="158,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.212,-2.066" Height="30" Width="240" TextAlignment="Justify"  VerticalContentAlignment="Center" AcceptsReturn="True" TextChanged="TextBox_TextChanged"/>
+        <ListView x:Name="listViewContacts" HorizontalAlignment="Left" Height="246" Margin="10,115,0,0" VerticalAlignment="Top" Width="476" ScrollViewer.VerticalScrollBarVisibility="Hidden">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel>
-                        <Image Source="{Binding Path=Image}" Width="45" Height="50" RenderTransformOrigin="1.238,3.131"/>
-                        <TextBlock Text="{Binding Path=Nom}" FontWeight="Bold" />
+                        <Image Source="{Binding Path=Image}" Width="100" Height="100" RenderTransformOrigin="1.238,3.131"/>
+                        <TextBlock Text="{Binding Path=Nom}" FontWeight="Bold" FontSize="25"/>
                     </WrapPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
@@ -26,17 +26,17 @@
                 </Style>
             </ListView.ItemContainerStyle>
         </ListView>
-        <Button x:Name="button_Precedent" Style="{StaticResource ButtonSuivPrec}" HorizontalAlignment="Left" Margin="334,115,0,0" VerticalAlignment="Top" Width="33" RenderTransformOrigin="0.5,0.5" Height="106" Click="button_Precedent_Click">
+        <Button x:Name="button_Precedent" Style="{StaticResource ButtonSuivPrec}" HorizontalAlignment="Left" Margin="491,115,0,0" VerticalAlignment="Top" Width="33" RenderTransformOrigin="0.5,0.5" Height="106" Click="button_Precedent_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Ressources/Icones/precedent128.png" Width="30" Height="60"/>
             </StackPanel>
         </Button>
-        <Button x:Name="button_Suivant" HorizontalAlignment="Left" Style="{StaticResource ButtonSuivPrec}" Margin="334,255,0,0" VerticalAlignment="Top" Width="33" RenderTransformOrigin="0.5,0.5" Height="106" Click="button_Suivant_Click">
+        <Button x:Name="button_Suivant" HorizontalAlignment="Left" Style="{StaticResource ButtonSuivPrec}" Margin="491,255,0,0" VerticalAlignment="Top" Width="33" RenderTransformOrigin="0.5,0.5" Height="106" Click="button_Suivant_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Ressources/Icones/suivant128.png" Width="30" Height="60"/>
             </StackPanel>
         </Button>
-        <Button x:Name="button_Suivant_Etape" Style="{StaticResource ButtonFondViolet}" Content="Suivant" HorizontalAlignment="Left" Margin="424,36,0,0" VerticalAlignment="Top" Width="90" RenderTransformOrigin="-0.421,-0.227" Click="button_Suivant_Etape_Click" Height="30"/>
+        <Button x:Name="button_Suivant_Etape" Style="{StaticResource ButtonFondViolet}" Content="Suivant" HorizontalAlignment="Left" Margin="412,36,0,0" VerticalAlignment="Top" Width="112" RenderTransformOrigin="-0.421,-0.227" Click="button_Suivant_Etape_Click" Height="30"/>
         <Label x:Name="label_Erreur" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="2.836,0.728" Margin="158,10,0,0" Width="240" Height="23" Foreground="Red" />
         <Label x:Name="label_listevide" Content="Label" HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" RenderTransformOrigin="-5.658,0.923" Width="402" Height="42"/>
     </Grid>

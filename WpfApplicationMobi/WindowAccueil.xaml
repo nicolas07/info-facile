@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplicationMobi"
         mc:Ignorable="d"
-        Title="Informatique Facile Software" Height="525" Width="678.846">
+        Title="Informatique Facile Software" Height="525" Width="678.846" Icon="/Ressources/Icones/windowicone32.png">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*" />

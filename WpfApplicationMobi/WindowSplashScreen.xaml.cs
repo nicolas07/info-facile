@@ -69,10 +69,7 @@ namespace WpfApplicationMobi
             (sender as BackgroundWorker).ReportProgress(10, null);
             FileHelper.Instance.CreerDossierRacine();
             (sender as BackgroundWorker).ReportProgress(30, null);
-            ReceptionMailHelper rc = new ReceptionMailHelper();
-            //liste_mail_test = RecevoirMailHelper.getInstance.RecupererMails();
-
-            
+            liste_mail_test = RecevoirMailHelper.getInstance.RecupererMails();
             NavigateReceptionMail.setData(liste_mail_test);
             (sender as BackgroundWorker).ReportProgress(60, null);
             //liste_contacts = BDDHelper.getInstance().ObtenirContacts();
