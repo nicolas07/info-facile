@@ -21,12 +21,12 @@
             ScrollViewer.HorizontalScrollBarVisibility="Hidden"
             ScrollViewer.VerticalScrollBarVisibility="Hidden"
             LoadCompleted="MainBrowser_LoadCompleted"/>
-        <Button x:Name="button_Bas" HorizontalAlignment="Left" Margin="332,355,0,0" VerticalAlignment="Top" Width="33" Click="button_Bas_Click" Height="102">
+        <Button x:Name="button_Bas" HorizontalAlignment="Left" Style="{StaticResource ButtonSuivPrec}" Margin="332,355,0,0" VerticalAlignment="Top" Width="33" Click="button_Bas_Click" Height="102">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Ressources/Icones/suivant128.png" Width="30" Height="60"/>
             </StackPanel>
         </Button>
-        <Button x:Name="button_Haut" HorizontalAlignment="Left" Margin="332,227,0,0" VerticalAlignment="Top" Width="33" Click="button_Haut_Click" Height="102">
+        <Button x:Name="button_Haut" HorizontalAlignment="Left" Style="{StaticResource ButtonSuivPrec}" Margin="332,227,0,0" VerticalAlignment="Top" Width="33" Click="button_Haut_Click" Height="102">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Ressources/Icones/precedent128.png" Width="30" Height="60"/>
             </StackPanel>

@@ -10,8 +10,8 @@
 
     <Grid>
         <Label x:Name="label" Content="Message" HorizontalAlignment="Left" Margin="25,32,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.846,-0.918" Width="68"/>
-        <TextBox x:Name="textBox_Message" HorizontalAlignment="Left" Margin="98,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="153" Width="247" TextChanged="TextBox_TextChanged" AcceptsReturn="True" AcceptsTab="True"/>
-        <Button x:Name="button_Envoyer" Content="Envoyer" Margin="350,32,24,0" VerticalAlignment="Top" Click="button_Envoyer_Click"  />
+        <TextBox x:Name="textBox_Message" HorizontalAlignment="Left" Margin="98,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="207" Width="247" TextChanged="TextBox_TextChanged" AcceptsReturn="True" AcceptsTab="True"/>
+        <Button x:Name="button_Envoyer" Style="{StaticResource ButtonFondViolet}" Content="Envoyer" Margin="350,32,10,0" VerticalAlignment="Top" Click="button_Envoyer_Click" Height="26"  />
         <Label x:Name="label_Erreur" HorizontalAlignment="Left" Margin="148,6,0,0" VerticalAlignment="Top" Width="197" Foreground="Red"/>
 
     </Grid>

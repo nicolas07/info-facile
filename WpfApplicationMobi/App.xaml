@@ -39,7 +39,7 @@
             </Setter>
         </Style>
         <Style TargetType="Button" x:Key="ButtonAnnuler">
-            <Setter Property="Background" Value="#FFFFCCCC"/>
+            <Setter Property="Background" Value="#FFF77C7C"/>
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontWeight" Value="Bold"></Setter>
             <Setter Property="Template">
@@ -56,6 +56,38 @@
         </Style>
         <Style TargetType="Button" x:Key="ButtonSuivPrec">
             <Setter Property="Background" Value="#FFFFA366"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border BorderThickness="0"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="4">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="ButtonFondVert">
+            <Setter Property="Background" Value="#FF5CD65C"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border BorderThickness="0"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="4">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="ButtonFondViolet">
+            <Setter Property="Background" Value="#FFD966FF"/>
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontWeight" Value="Bold"></Setter>
             <Setter Property="Template">

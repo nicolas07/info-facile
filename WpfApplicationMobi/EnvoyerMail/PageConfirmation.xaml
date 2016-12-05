@@ -10,7 +10,7 @@
 
     <Grid>
         <Label x:Name="label_Fin" Content="" HorizontalAlignment="Left" Margin="36,40,0,0" VerticalAlignment="Top" Width="386"/>
-        <Button x:Name="button_Retour" Content="Retour Menu Principal" HorizontalAlignment="Left" Margin="185,130,0,0" VerticalAlignment="Top" Width="75" Click="button_Retour_Click"/>
+        <Button x:Name="button_Retour" Style="{StaticResource ButtonFondViolet}" Content="Retour Menu Principal" HorizontalAlignment="Left" Margin="160,142,0,0" VerticalAlignment="Top" Width="153" Click="button_Retour_Click" Height="24"/>
 
     </Grid>
 </Page>
