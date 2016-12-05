@@ -4,6 +4,71 @@
              xmlns:local="clr-namespace:WpfApplicationMobi"
              StartupUri="WindowSplashScreen.xaml">
     <Application.Resources>
-         
+        <Style TargetType="Button" x:Key="FlatButtonStyle">
+            <Setter Property="Background" Value="DarkCyan"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border BorderThickness="0"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="4">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="ButtonRetour">
+            <Setter Property="Background" Value="#FFCCE6FF"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="Width" Value="75"/>
+            <Setter Property="Height" Value="35"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border BorderThickness="0"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="4">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="ButtonAnnuler">
+            <Setter Property="Background" Value="#FFFFCCCC"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border BorderThickness="0"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="4">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="Button" x:Key="ButtonSuivPrec">
+            <Setter Property="Background" Value="#FFFFA366"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border BorderThickness="0"
+                        Background="{TemplateBinding Background}"
+                        CornerRadius="4">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Application.Resources>
 </Application>

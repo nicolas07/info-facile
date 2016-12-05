@@ -40,12 +40,12 @@
                 <Label>Supprimer</Label>
             </StackPanel>
         </Button>
-        <Button x:Name="button_Suivante" HorizontalAlignment="Left" Margin="1009,414,0,0" VerticalAlignment="Top" Width="109" Click="button_Suivante_Click" Height="74">
+        <Button x:Name="button_Suivante" Style="{StaticResource ButtonSuivPrec}" Margin="1009,414,0,0" Click="button_Suivante_Click" Width="110" Height="73" VerticalAlignment="Top" HorizontalAlignment="Left">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Ressources/Icones/suivantphoto128.png" Width="106" Height="66" />
             </StackPanel>
         </Button>
-        <Button x:Name="button_Precedent" HorizontalAlignment="Left" Margin="506,414,0,0" VerticalAlignment="Top" Width="110" Click="button_Precedent_Click" Height="73">
+        <Button x:Name="button_Precedent" Style="{StaticResource ButtonSuivPrec}" HorizontalAlignment="Left" Margin="506,414,0,0" VerticalAlignment="Top" Click="button_Precedent_Click" Width="110" Height="73">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Ressources/Icones/precedentphoto128.png" Width="106" Height="65" />
             </StackPanel>

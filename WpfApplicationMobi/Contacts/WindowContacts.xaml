@@ -9,21 +9,21 @@
     <Grid>
         <Grid HorizontalAlignment="Stretch" Height="50" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto" MinWidth="91"/>
+                <ColumnDefinition Width="Auto" MinWidth="125"/>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="Auto" MinWidth="91"/>
+                <ColumnDefinition Width="Auto" MinWidth="135"/>
             </Grid.ColumnDefinitions>
 
 
-            <Button Grid.Column="0" BorderThickness="1" Background="White" Click="ButtonRetour_Click" >
-                <StackPanel Orientation="Horizontal">
-                    <Image Source="/Ressources/Icones/retour128.png" Width="17" Height="23" RenderTransformOrigin="1.238,3.131" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button Grid.Column="0" BorderThickness="1" Style="{StaticResource ButtonRetour}" Click="ButtonRetour_Click" Height="Auto" Width="Auto" >
+                <StackPanel Orientation="Horizontal" Height="52" Width="115">
+                    <Image Source="/Ressources/Icones/retour128.png" Width="30" Height="41" RenderTransformOrigin="1.238,3.131" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     <TextBlock Text="Retour" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"/>
                 </StackPanel>
             </Button>
-            <Button Grid.Column="2" BorderThickness="1" Background="White" Click="ButtonAnnuler_Click" Height="50" VerticalAlignment="Bottom">
+            <Button Grid.Column="2" BorderThickness="1" Style="{StaticResource ButtonAnnuler}" Click="ButtonAnnuler_Click" Height="50" VerticalAlignment="Bottom">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="/Ressources/Icones/annuler128.png" Width="17" Height="23" RenderTransformOrigin="1.238,3.131" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Image Source="/Ressources/Icones/annuler128.png" Width="30" Height="41" RenderTransformOrigin="1.238,3.131" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     <TextBlock Text="Annuler" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"/>
                 </StackPanel>
             </Button>
