@@ -35,7 +35,6 @@ namespace WpfApplicationMobi.RecevoirMails
             label_Date.Content = m.DateReception;
             label_Expediteur.Content = m.Expediteur;
             label_Subject.Content = m.Objet;
-            //textBlock_Message.Text = m.Message;
             MainBrowser.NavigateToString(m.Message);
 
             m.estLu = true;

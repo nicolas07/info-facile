@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplicationMobi"
         mc:Ignorable="d" Loaded="Page_Loaded"
-        Title="WindowSplashScreen" Height="263.758" Width="404.698" Icon="./Ressources/Icones/windowicone32.png">
+        Title="Informatique Facile Software" Height="263.758" Width="404.698" Icon="./Ressources/Icones/windowicone32.png">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Ressources/Icones/splash.jpeg" Stretch="UniformToFill"/>
