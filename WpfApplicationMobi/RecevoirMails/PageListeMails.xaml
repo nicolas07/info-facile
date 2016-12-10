@@ -14,9 +14,9 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel>
-                        <TextBlock Text="{Binding Path=From.Address}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                        <TextBlock Text="{Binding Path=Subject}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                        <TextBlock Text="{Binding Path=Date}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBlock Text="{Binding Path=Expediteur}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBlock Text="{Binding Path=Sujet}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBlock Text="{Binding Path=DateReception}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                     </WrapPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
@@ -24,7 +24,7 @@
                 <Style TargetType="ListViewItem">
                     <EventSetter Event="PreviewMouseLeftButtonUp" Handler="ListViewItem_PreviewMouseLeftButtonUp" />
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Path=Seen}" Value="False">
+                        <DataTrigger Binding="{Binding Path=estLu}" Value="False">
                             <Setter Property="FontWeight" Value="Bold" />
                         </DataTrigger>
                         <DataTrigger Binding="{Binding Path=Seen}" Value="True">

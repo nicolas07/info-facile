@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.Caching;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -25,7 +26,7 @@ namespace WpfApplicationMobi
     {
         private readonly BackgroundWorker worker = new BackgroundWorker();
 
-        private static List<ImapX.Message> liste_mail_test;
+        private static List<EnvoyerMail.MailRecu> liste_mail_test;
 
         private static List<Contact> liste_contacts;
 
@@ -74,10 +75,12 @@ namespace WpfApplicationMobi
             (sender as BackgroundWorker).ReportProgress(10, null);
             FileHelper.Instance.CreerDossierRacine();
             (sender as BackgroundWorker).ReportProgress(30, null);
+            
             liste_mail_test = RecevoirMailHelper.getInstance.RecupererMails();
+                
             NavigateReceptionMail.setData(liste_mail_test);
             (sender as BackgroundWorker).ReportProgress(60, null);
-            liste_contacts = BDDHelper.getInstance().ObtenirContacts();
+            liste_contacts = FileHelper.Instance.LireFichierConfigContacts();
             NavigateContact.setContacts(liste_contacts);
             (sender as BackgroundWorker).ReportProgress(90, null);
 

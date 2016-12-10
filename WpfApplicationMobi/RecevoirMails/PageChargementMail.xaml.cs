@@ -24,7 +24,7 @@ namespace WpfApplicationMobi.RecevoirMails
     {
         private readonly BackgroundWorker worker = new BackgroundWorker();
 
-        private static List<ImapX.Message> liste_mail_test;
+        private static List<EnvoyerMail.MailRecu> liste_mail_test;
 
         public PageChargementMail()
         {

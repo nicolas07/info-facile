@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Caching;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -27,9 +28,11 @@ namespace WpfApplicationMobi.RecevoirMails
             }
         }
 
-        public List<ImapX.Message> RecupererMails() {
+        public List<EnvoyerMail.MailRecu> RecupererMails() {
 
             List<ImapX.Message> liste = new List<ImapX.Message>();
+
+            List<EnvoyerMail.MailRecu> liste_test = new List<EnvoyerMail.MailRecu>();
 
             var client = new ImapClient("imap.gmail.com", true);
 
@@ -38,7 +41,7 @@ namespace WpfApplicationMobi.RecevoirMails
 
                 if (client.Login(user,motDePasse))
                 {
-                    liste = client.Folders.Inbox.Search().ToList();
+                    liste = client.Folders.Inbox.Search("ALL",ImapX.Enums.MessageFetchMode.Minimal | ImapX.Enums.MessageFetchMode.Body).ToList();
                 }
             }
             else
@@ -48,7 +51,26 @@ namespace WpfApplicationMobi.RecevoirMails
 
             client.Logout();
 
-            return liste;
+            string message = null;
+            foreach (ImapX.Message m in liste) {
+                if (m.Body.HasHtml)
+                {
+                    message = m.Body.Html;
+                }
+                else if (m.Body.HasText)
+                {
+                    message = m.Body.Text;
+
+                }
+                else {
+                    message = string.Empty;
+                }
+
+
+                liste_test.Add(new EnvoyerMail.MailRecu() { Expediteur = m.From.Address, estLu = m.Seen, Message = message, Objet = m.Subject, DateReception = m.Date.Value });
+            }
+
+            return liste_test;
         }
 
         public bool MarquerCommeLu(ImapX.Message m) {

@@ -25,8 +25,6 @@ namespace WpfApplicationMobi
         {
             InitializeComponent();
             FileHelper.Instance.CreerDossierImages();
-            //BDDHelper.getInstance().AjouterContact(new Contacts.Contact() { Nom = "Maman", NumeroTelephone = "0606060606", Email = "tototo@gmail.com", Image = "E:\\Images\\totot.png" });
-            //BDDHelper.getInstance().ObtenirContacts();
         }
         
         private void Button_Click_Recherche(object sender, RoutedEventArgs e)
