@@ -4,7 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApplicationMobi"
-        mc:Ignorable="d" Loaded="Page_Loaded"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com" 
+        mc:Ignorable="d"
+        Loaded="Page_Loaded"
+        WindowStartupLocation="CenterScreen"    
         Title="Informatique Facile Software" Height="263.758" Width="404.698" Icon="./Ressources/Icones/windowicone32.png">
     <Grid>
         <Grid.Background>
@@ -12,6 +15,7 @@
         </Grid.Background>
         <Label x:Name="label" Content="Bienvenue sur l'application InfoFacile" Margin="10,60,10,0" VerticalAlignment="Top" HorizontalContentAlignment="center" RenderTransformOrigin="2.168,0.524" FontSize="20" FontWeight="Bold" Foreground="AntiqueWhite" Height="57"/>
         <Label x:Name="label_chargement" Foreground="AntiqueWhite" Content="" Margin="42,117,41,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Image x:Name="image" gif:ImageBehavior.AnimatedSource="/Ressources/Icones/54388.gif"  Stretch="UniformToFill" HorizontalAlignment="Left" Height="34" Margin="103,180,0,0" VerticalAlignment="Top" Width="208" RenderOptions.BitmapScalingMode="HighQuality" />
         <ProgressBar x:Name="progressBar" HorizontalAlignment="Left" Height="32" Margin="94,172,0,0" VerticalAlignment="Top" Width="208"/>
         <Label x:Name="label_pourcentage" Content="" FontWeight="Bold" Foreground="AntiqueWhite" HorizontalAlignment="Left" Margin="302,172,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.285,-0.728" Height="32" Width="54"/>
 

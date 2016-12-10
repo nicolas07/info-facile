@@ -32,6 +32,10 @@ namespace WpfApplicationMobi
         public WindowSplashScreen()
         {
             InitializeComponent();
+
+            progressBar.Visibility = Visibility.Hidden;
+            label_pourcentage.Visibility = Visibility.Hidden;
+
             worker.DoWork += worker_DoWork;
             worker.WorkerReportsProgress = true;
             worker.RunWorkerCompleted += worker_RunWorkerCompleted;
@@ -46,7 +50,8 @@ namespace WpfApplicationMobi
                 label_pourcentage.Content = "10%";
                 label_chargement.Content = "Vérification des dossiers";
             }
-            if (e.ProgressPercentage == 30) {
+            if (e.ProgressPercentage == 30)
+            {
                 label_pourcentage.Content = "30%";
                 label_chargement.Content = "Recuperation des mails";
             }
@@ -72,9 +77,10 @@ namespace WpfApplicationMobi
             liste_mail_test = RecevoirMailHelper.getInstance.RecupererMails();
             NavigateReceptionMail.setData(liste_mail_test);
             (sender as BackgroundWorker).ReportProgress(60, null);
-            //liste_contacts = BDDHelper.getInstance().ObtenirContacts();
+            liste_contacts = BDDHelper.getInstance().ObtenirContacts();
             NavigateContact.setContacts(liste_contacts);
             (sender as BackgroundWorker).ReportProgress(90, null);
+
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
