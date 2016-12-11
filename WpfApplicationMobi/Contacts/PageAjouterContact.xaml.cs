@@ -21,6 +21,8 @@ namespace WpfApplicationMobi.Contacts
     public partial class PageAjouterContact : Page
     {
         private bool erreur;
+
+        private string cheminImage;
         public PageAjouterContact()
         {
             InitializeComponent();
@@ -40,12 +42,10 @@ namespace WpfApplicationMobi.Contacts
             if (result == true)
             {
                 // Open document 
-                string filename = dlg.FileName;
-                string tmp = filename.Substring(filename.LastIndexOf("\\") + 1);
+                cheminImage = dlg.FileName;
+                string tmp = cheminImage.Substring(cheminImage.LastIndexOf("\\") + 1);
                 textBox_Image.Text = tmp;
-                image_Preview.Source = new BitmapImage(new Uri(filename, UriKind.RelativeOrAbsolute));
-                string dest = System.IO.Path.Combine(FileHelper.Instance.lienimagefolder, tmp);
-                System.IO.File.Copy(filename,dest,true);
+                image_Preview.Source = new BitmapImage(new Uri(cheminImage, UriKind.RelativeOrAbsolute));
             }
         }
 
@@ -55,12 +55,15 @@ namespace WpfApplicationMobi.Contacts
             {
                 Contact c = new Contact();
                 c.Nom = textBox_Nom.Text;
-                c.Image = textBox_Image.Text;
+                c.Image = cheminImage;
                 c.Email = textBox_Email.Text;
                 c.NumeroTelephone = textBox_Telephone.Text;
 
-                bool res = BDDHelper.getInstance().AjouterContact(c);
+                bool res = FileHelper.Instance.AjouterContact(c);
                 c.estAjoute = res;
+
+                //Maj liste contact
+                NavigateContact.setContacts(FileHelper.Instance.LireFichierConfigContacts());
 
                 NavigateContact.Navigate(this.NavigationService, new Uri("./Contacts/PageConfirmationAjouterContact.xaml", UriKind.Relative), c);
 

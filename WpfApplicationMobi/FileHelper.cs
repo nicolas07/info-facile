@@ -181,7 +181,7 @@ namespace WpfApplicationMobi
 
             try
             {
-                string ProgramFiles = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                string ProgramFiles = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
                 string path = Path.Combine(Path.Combine(Path.Combine(ProgramFiles, rootFolder), "Contacts"), fileName);
 
                 StreamWriter file2 = new StreamWriter(path, true);
@@ -207,7 +207,7 @@ namespace WpfApplicationMobi
             //Création du dossier Contacts dans c:/Users/User/Appdata/Infofacile
             try
             {
-                string ProgramFiles = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                string ProgramFiles = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
                 string MyNewPath = Path.Combine(Path.Combine(ProgramFiles, rootFolder), "Mails");
                 if (!Directory.Exists(MyNewPath))
                 {
@@ -224,7 +224,7 @@ namespace WpfApplicationMobi
         {
             try
             {
-                string ProgramFiles = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                string ProgramFiles = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
                 string MyNewPath = Path.Combine(Path.Combine(Path.Combine(ProgramFiles, rootFolder), "Contacts"), fileMail);
                 if (!File.Exists(MyNewPath))
                 {
@@ -241,7 +241,7 @@ namespace WpfApplicationMobi
         {
 
             List<Mail> list = new List<Mail>();
-            string ProgramFiles = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+            string ProgramFiles = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
             string path = Path.Combine(Path.Combine(Path.Combine(ProgramFiles, rootFolder), "Mails"), fileName);
             using (StreamReader reader = new StreamReader(path))
             {
@@ -269,7 +269,7 @@ namespace WpfApplicationMobi
 
             try
             {
-                string ProgramFiles = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                string ProgramFiles = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
                 string path = Path.Combine(Path.Combine(Path.Combine(ProgramFiles, rootFolder), "Mails"), fileMail);
 
                 StreamWriter file2 = new StreamWriter(path, true);
