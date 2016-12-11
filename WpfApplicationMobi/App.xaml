@@ -102,5 +102,15 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style TargetType="Label" x:Key="LabelGras">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="FontSize" Value="15"></Setter>
+        </Style>
+        <Style TargetType="TextBox" x:Key="TextBoxCustom">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="FontSize" Value="15"></Setter>
+        </Style>
     </Application.Resources>
 </Application>
