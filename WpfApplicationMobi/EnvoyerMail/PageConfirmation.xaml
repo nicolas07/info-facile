@@ -6,11 +6,12 @@
       xmlns:local="clr-namespace:WpfApplicationMobi.EnvoyerMail"
       mc:Ignorable="d" 
       d:DesignHeight="286.286" d:DesignWidth="445.714"
+      Height="514"
       Title="PageConfirmation">
 
     <Grid>
-        <Label x:Name="label_Fin" Content="" HorizontalAlignment="Left" Margin="36,40,0,0" VerticalAlignment="Top" Width="386"/>
-        <Button x:Name="button_Retour" Style="{StaticResource ButtonFondViolet}" Content="Retour Menu Principal" HorizontalAlignment="Left" Margin="160,142,0,0" VerticalAlignment="Top" Width="153" Click="button_Retour_Click" Height="24"/>
+        <Label x:Name="label_Fin" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{StaticResource LabelGras}" Content="" HorizontalAlignment="Left" Margin="36,40,0,0" VerticalAlignment="Top" Width="386"/>
+        <Button x:Name="button_Retour" Style="{StaticResource ButtonFondViolet}" Content="Retour Menu Principal" Margin="0,177,141,0" VerticalAlignment="Top" Click="button_Retour_Click" Height="24" HorizontalAlignment="Right" Width="153"/>
 
     </Grid>
 </Page>

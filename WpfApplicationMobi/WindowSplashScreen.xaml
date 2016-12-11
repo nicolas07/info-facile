@@ -14,8 +14,8 @@
             <ImageBrush ImageSource="/Ressources/Icones/splash.jpeg" Stretch="UniformToFill"/>
         </Grid.Background>
         <Label x:Name="label" Content="Bienvenue sur l'application InfoFacile" Margin="10,60,10,0" VerticalAlignment="Top" HorizontalContentAlignment="center" RenderTransformOrigin="2.168,0.524" FontSize="20" FontWeight="Bold" Foreground="AntiqueWhite" Height="57"/>
-        <Label x:Name="label_chargement" Foreground="AntiqueWhite" Content="" Margin="42,117,41,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Image x:Name="image" gif:ImageBehavior.AnimatedSource="/Ressources/Icones/54388.gif"  Stretch="UniformToFill" HorizontalAlignment="Left" Height="34" Margin="103,180,0,0" VerticalAlignment="Top" Width="208" RenderOptions.BitmapScalingMode="HighQuality" />
+        <Label x:Name="label_chargement" Foreground="AntiqueWhite" Content="" Margin="42,141,41,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Image x:Name="image" VerticalAlignment="Center" gif:ImageBehavior.AnimatedSource="/Ressources/Icones/54388.gif"  Stretch="UniformToFill" HorizontalAlignment="Left" Height="34" Margin="103,180,0,0" Width="208" RenderOptions.BitmapScalingMode="HighQuality" />
         <ProgressBar x:Name="progressBar" HorizontalAlignment="Left" Height="32" Margin="94,172,0,0" VerticalAlignment="Top" Width="208"/>
         <Label x:Name="label_pourcentage" Content="" FontWeight="Bold" Foreground="AntiqueWhite" HorizontalAlignment="Left" Margin="302,172,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.285,-0.728" Height="32" Width="54"/>
 

@@ -28,7 +28,7 @@ namespace WpfApplicationMobi.EnvoyerMail
         {
             InitializeComponent();
 
-            listViewContacts.ItemsSource = BDDHelper.getInstance().ObtenirContacts();
+            listViewContacts.ItemsSource = NavigateContact.getContacts();
             int count = listViewContacts.Items.Count;
             if (count == 0)
             {
