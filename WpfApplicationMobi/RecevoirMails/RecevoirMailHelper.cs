@@ -67,13 +67,13 @@ namespace WpfApplicationMobi.RecevoirMails
                 }
 
 
-                liste_test.Add(new EnvoyerMail.MailRecu() { Expediteur = m.From.Address, estLu = m.Seen, Message = message, Objet = m.Subject, DateReception = m.Date.Value });
+                liste_test.Add(new EnvoyerMail.MailRecu() { Expediteur = m.From.Address, estLu = m.Seen, Message = message, Objet = m.Subject, DateReception = m.Date.Value,Uid = m.UId });
             }
 
             return liste_test;
         }
 
-        public bool MarquerCommeLu(ImapX.Message m) {
+        public bool MarquerCommeLu(EnvoyerMail.MailRecu m) {
             bool res = false;
 
             var client = new ImapClient("imap.gmail.com", true);
@@ -84,7 +84,7 @@ namespace WpfApplicationMobi.RecevoirMails
                 if (client.Login(user, motDePasse))
                 {
                     
-                    ImapX.Message tmp = client.Folders.Inbox.Search(string.Concat("UID ",m.UId)).First();
+                    ImapX.Message tmp = client.Folders.Inbox.Search(string.Concat("UID ",m.Uid)).First();
                     tmp.Seen = true;
                     res = true;
                 }

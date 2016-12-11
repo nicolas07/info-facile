@@ -18,5 +18,7 @@ namespace WpfApplicationMobi.EnvoyerMail
         public string Objet { get; set; }
 
         public string Message { get; set; }
+
+        public long Uid { get; set; }
     }
 }

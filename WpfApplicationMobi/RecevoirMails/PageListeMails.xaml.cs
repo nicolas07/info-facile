@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -22,21 +23,39 @@ namespace WpfApplicationMobi.RecevoirMails
     /// </summary>
     public partial class PageListeMails : Page
     {
+        private readonly BackgroundWorker worker = new BackgroundWorker();
+
+        private List<EnvoyerMail.MailRecu> liste_mail_test;
 
         public PageListeMails()
         {
             InitializeComponent();
-            
+            worker.DoWork += worker_DoWork;
+            worker.RunWorkerCompleted += worker_RunWorkerCompleted;
             listViewEmail.ItemsSource = NavigateReceptionMail.GetNavigationData(this.NavigationService);
         }
-        
+
+        private void worker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            label_status.Content = "";
+            listViewEmail.ItemsSource = listViewEmail.ItemsSource = NavigateReceptionMail.GetNavigationData(this.NavigationService);
+
+        }
+
+        private void worker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            liste_mail_test = RecevoirMailHelper.getInstance.RecupererMails();
+
+            NavigateReceptionMail.setData(liste_mail_test);
+
+        }
+
         private void ListViewItem_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             var item = sender as ListViewItem;
             if (item != null && item.IsSelected)
             {
                 MailRecu obj = item.DataContext as MailRecu;
-                BDDHelper.getInstance().ModifierEtatMail(obj);
                 NavigateReceptionMailTest.Navigate(this.NavigationService, new Uri("./RecevoirMails/PageDetailMail.xaml", UriKind.Relative), obj);
 
             }
@@ -74,6 +93,12 @@ namespace WpfApplicationMobi.RecevoirMails
 
                 listBoxItem.Focus();
             }
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            label_status.Content = "Récupération en cours.....";
+            worker.RunWorkerAsync();
         }
     }
 }

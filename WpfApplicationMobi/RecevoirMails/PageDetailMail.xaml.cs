@@ -1,6 +1,7 @@
 ﻿using mshtml;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -24,23 +25,32 @@ namespace WpfApplicationMobi.RecevoirMails
     /// </summary>
     public partial class PageDetailMail : Page
     {
+        private readonly BackgroundWorker worker = new BackgroundWorker();
 
         private int scroll = 0;
         private static MailRecu mail;
         public PageDetailMail()
         {
             InitializeComponent();
+
+            worker.DoWork += worker_DoWork;
             MailRecu m = NavigateReceptionMailTest.GetNavigationData(this.NavigationService);
+           
             mail = m;
             label_Date.Content = m.DateReception;
             label_Expediteur.Content = m.Expediteur;
-            label_Subject.Content = m.Objet;
+            label_Subject.Text = m.Objet;
             MainBrowser.NavigateToString(m.Message);
-
+            worker.RunWorkerAsync();
             m.estLu = true;
         }
-               
-    
+
+
+        private void worker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            RecevoirMailHelper.getInstance.MarquerCommeLu(mail);
+        }
+
         private void MainBrowser_LoadCompleted(object sender, NavigationEventArgs e)
         {
 
@@ -88,7 +98,7 @@ namespace WpfApplicationMobi.RecevoirMails
         {
             mshtml.IHTMLDocument2 documentText = (IHTMLDocument2)MainBrowser.Document;
             //this will access the document properties 
-            documentText.body.parentElement.style.overflow = "hidden";
+            //documentText.body.parentElement.style.overflow = "hidden";
         }
     }
 }

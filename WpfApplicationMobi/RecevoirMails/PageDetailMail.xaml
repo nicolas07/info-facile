@@ -6,34 +6,31 @@
       xmlns:local="clr-namespace:WpfApplicationMobi.RecevoirMails"
       xmlns:test="clr-namespace:WpfApplicationMobi.RecevoirMails"
       mc:Ignorable="d" d:DesignWidth="1311.045"
-      Title="PageDetailMail" Height="614.267" >
+      Title="PageDetailMail" Height="514" Width="1248" >
 
     <Grid>
-        <Label x:Name="label_Expediteur" Content="Label" HorizontalAlignment="Left" Margin="152,24,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.467,-1.025" Width="213"/>
-        <Label x:Name="label_Date" Content="Label" HorizontalAlignment="Left" Margin="152,55,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.467,-1.025" Width="213"/>
-        <Label x:Name="label_Subject" Content="Label" HorizontalAlignment="Left" Margin="152,86,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.467,-1.025" Width="213" Height="62" />
-        <WebBrowser HorizontalAlignment="Left" Loaded="MainBrowser_Loaded"
-		    Height="594"
-		    Margin="395,10,0,0"
-		    VerticalAlignment="Top"
-		    Width="902"
+        <Label x:Name="label_Expediteur" Style="{StaticResource LabelGras}" Content="Label" HorizontalAlignment="Left" Margin="109,24,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.467,-1.025" Width="256"/>
+        <Label x:Name="label_Date"  Style="{StaticResource LabelGras}" Content="Label" HorizontalAlignment="Left" Margin="109,55,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.467,-1.025" Width="256"/>
+        <TextBlock x:Name="label_Subject"  Style="{StaticResource TextBlockGras}" Text="Label" HorizontalAlignment="Left" Margin="109,91,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.467,-1.025" Width="256" Height="62" TextWrapping="WrapWithOverflow" />
+        <WebBrowser Loaded="MainBrowser_Loaded"
+		    Margin="395,10,10,10"
 		    Name="MainBrowser" 
             ScrollViewer.HorizontalScrollBarVisibility="Hidden"
             ScrollViewer.VerticalScrollBarVisibility="Hidden"
             LoadCompleted="MainBrowser_LoadCompleted"/>
-        <Button x:Name="button_Bas" HorizontalAlignment="Left" Style="{StaticResource ButtonSuivPrec}" Margin="332,355,0,0" VerticalAlignment="Top" Width="33" Click="button_Bas_Click" Height="102">
+        <Button x:Name="button_Bas" HorizontalAlignment="Left" Style="{StaticResource ButtonSuivPrec}" Margin="357,355,0,0" VerticalAlignment="Top" Width="33" Click="button_Bas_Click" Height="102">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Ressources/Icones/suivant128.png" Width="30" Height="60"/>
             </StackPanel>
         </Button>
-        <Button x:Name="button_Haut" HorizontalAlignment="Left" Style="{StaticResource ButtonSuivPrec}" Margin="332,227,0,0" VerticalAlignment="Top" Width="33" Click="button_Haut_Click" Height="102">
+        <Button x:Name="button_Haut" HorizontalAlignment="Left" Style="{StaticResource ButtonSuivPrec}" Margin="357,221,0,0" VerticalAlignment="Top" Width="33" Click="button_Haut_Click" Height="102">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Ressources/Icones/precedent128.png" Width="30" Height="60"/>
             </StackPanel>
         </Button>
-        <Label x:Name="label" Content="Expediteur : " HorizontalAlignment="Left" Margin="10,24,0,0" VerticalAlignment="Top" RenderTransformOrigin="-5.579,-7.885" Width="116"/>
-        <Label x:Name="label_Copy" Content="Date de Reception : " HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" RenderTransformOrigin="-5.579,-7.885" Width="116"/>
-        <Label x:Name="label_Copy1" Content="Objet : " HorizontalAlignment="Left" Margin="10,86,0,0" VerticalAlignment="Top" RenderTransformOrigin="-5.579,-7.885" Width="116"/>
+        <Label x:Name="label" Style="{StaticResource LabelGras}" Content="Expediteur : " HorizontalAlignment="Left" Margin="10,24,0,0" VerticalAlignment="Top" RenderTransformOrigin="-5.579,-7.885" Width="94"/>
+        <Label x:Name="label_Copy" Style="{StaticResource LabelGras}" Content="Date : " HorizontalAlignment="Left" Margin="10,55,0,0" VerticalAlignment="Top" RenderTransformOrigin="-5.579,-7.885" Width="94"/>
+        <Label x:Name="label_Copy1" Style="{StaticResource LabelGras}" Content="Objet : " HorizontalAlignment="Left" Margin="10,86,0,0" VerticalAlignment="Top" RenderTransformOrigin="-5.579,-7.885" Width="94"/>
 
     </Grid>
 </Page>

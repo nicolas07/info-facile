@@ -6,17 +6,18 @@
       xmlns:local="clr-namespace:WpfApplicationMobi.RecevoirMails"
       mc:Ignorable="d" 
       d:DesignHeight="485.366" d:DesignWidth="854.513"
+      Height="514" Width="1248"
       Title="PageListeMails">
 
 
     <Grid>
-        <ListView x:Name="listViewEmail" Height="465" Margin="10,10,47,0" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+        <ListView x:Name="listViewEmail" Height="454" Margin="10,50,47,0" VerticalAlignment="Top" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel>
-                        <TextBlock Text="{Binding Path=Expediteur}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                        <TextBlock Text="{Binding Path=Sujet}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                        <TextBlock Text="{Binding Path=DateReception}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <TextBlock Text="{Binding Path=Expediteur}" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="15"/>
+                        <TextBlock Text="{Binding Path=Sujet}" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="15"/>
+                        <TextBlock Text="{Binding Path=DateReception}" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="15"/>
                     </WrapPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
@@ -34,22 +35,29 @@
                 </Style>
             </ListView.ItemContainerStyle>
             <ListView.View>
-                <GridView> 
+                <GridView>
                     <GridViewColumn Header="Expediteur" DisplayMemberBinding="{Binding Path=Expediteur}" Width="Auto" />
                     <GridViewColumn Header="Sujet" DisplayMemberBinding="{Binding Path=Objet}" Width="Auto"/>
-                    <GridViewColumn Header="Date de reception" DisplayMemberBinding="{Binding Path=DateReception}" Width="Auto"/>
+                    <GridViewColumn Header="Date" DisplayMemberBinding="{Binding Path=DateReception}"/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="button_Precedent" Style="{StaticResource ButtonSuivPrec}" HorizontalAlignment="Left" Margin="813,10,0,0" VerticalAlignment="Top" Width="32" RenderTransformOrigin="0.5,0.5" Height="106" Click="button_Precedent_Click">
+        <Button x:Name="button_Precedent" Style="{StaticResource ButtonSuivPrec}" Margin="0,50,10,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Height="106" Click="button_Precedent_Click" HorizontalAlignment="Right" Width="32">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Ressources/Icones/precedent128.png" Width="30" Height="60"/>
             </StackPanel>
         </Button>
-        <Button x:Name="button_Suivant"  Style="{StaticResource ButtonSuivPrec}" HorizontalAlignment="Left" Margin="812,369,0,0" VerticalAlignment="Top" Width="33" RenderTransformOrigin="0.5,0.5" Height="106" Click="button_Suivant_Click">
+        <Button x:Name="button_Suivant"  Style="{StaticResource ButtonSuivPrec}" Margin="0,398,10,10" RenderTransformOrigin="0.5,0.5" Click="button_Suivant_Click" HorizontalAlignment="Right" Width="33">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Ressources/Icones/suivant128.png" Width="30" Height="60"/>
             </StackPanel>
         </Button>
+        <Button x:Name="button" Style="{StaticResource ButtonFondVert}" HorizontalAlignment="Left" Margin="10,10,0,469" Width="221" Click="button_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Ressources/Icones/refresh128.png" Width="41" Height="26" />
+                <Label>Récupérer les nouveaux mails</Label>
+            </StackPanel>
+        </Button>
+        <Label x:Name="label_status" Content="" Style="{StaticResource LabelGras}" Foreground="Green" HorizontalAlignment="Left" Margin="251,10,0,0" VerticalAlignment="Top" Height="35" Width="386"/>
     </Grid>
 </Page>
