@@ -107,6 +107,11 @@
             <Setter Property="FontWeight" Value="Bold"></Setter>
             <Setter Property="FontSize" Value="15"></Setter>
         </Style>
+        <Style TargetType="TextBlock" x:Key="TextBlockGras">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="FontSize" Value="15"></Setter>
+        </Style>
         <Style TargetType="TextBox" x:Key="TextBoxCustom">
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontWeight" Value="Bold"></Setter>

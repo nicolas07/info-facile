@@ -6,12 +6,13 @@
       xmlns:local="clr-namespace:WpfApplicationMobi.Photos"
       mc:Ignorable="d" 
       d:DesignHeight="498" d:DesignWidth="1128"
+      Height="514" Width="1248"
       Title="ListePhotosPage">
     <Grid>
         <TreeView x:Name="treeView_dossier" HorizontalAlignment="Left" Height="478" Margin="10,10,0,0" VerticalAlignment="Top" Width="174" MouseLeftButtonUp="treeView_dossier_MouseLeftButtonUp">
             <TreeView.Resources>
                 <HierarchicalDataTemplate DataType="{x:Type local:CustomItem}" ItemsSource="{Binding items}">
-                    <TextBlock Text="{Binding Path=nom}" />
+                    <Label Content="{Binding Path=nom}" Style="{StaticResource LabelGras}" />
                 </HierarchicalDataTemplate>
             </TreeView.Resources>
             <TreeView.ItemContainerStyle>
@@ -27,25 +28,25 @@
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
                         <Image Source="/Ressources/Icones/imageicone48.png" Height="20" Width="20"></Image>
-                        <TextBlock Text="{Binding nomfichier}" />
+                        <Label Content="{Binding nomfichier}" Style="{StaticResource LabelGras}" />
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
         <Image x:Name="image_fichier" HorizontalAlignment="Stretch" Height="396" Margin="506,10,10,0" VerticalAlignment="Top"/>
-        <Button x:Name="button_Tablette" Style="{StaticResource ButtonFondViolet}" Content="" HorizontalAlignment="Left" Margin="719,414,0,0" VerticalAlignment="Top" Width="191" Click="button_Tablette_Click" Height="35"/>
-        <Button x:Name="button_Supprimer" HorizontalAlignment="Left" Style="{StaticResource ButtonRetour}" Margin="719,454,0,0" VerticalAlignment="Top" Width="191" Height="34" Click="button_Supprimer_Click">
+        <Button x:Name="button_Tablette" Style="{StaticResource ButtonFondViolet}" Content="" HorizontalAlignment="Left" Margin="777,414,0,0" VerticalAlignment="Top" Width="191" Click="button_Tablette_Click" Height="35"/>
+        <Button x:Name="button_Supprimer" HorizontalAlignment="Left" Style="{StaticResource ButtonRetour}" Margin="777,454,0,0" VerticalAlignment="Top" Width="191" Height="34" Click="button_Supprimer_Click">
             <StackPanel Orientation="Horizontal" Width="119">
                 <Image Source="/Ressources/Icones/poubelle128.png" Width="41" Height="26" />
                 <Label>Supprimer</Label>
             </StackPanel>
         </Button>
-        <Button x:Name="button_Suivante" Style="{StaticResource ButtonSuivPrec}" Margin="1009,414,0,0" Click="button_Suivante_Click" Width="110" Height="73" VerticalAlignment="Top" HorizontalAlignment="Left">
+        <Button x:Name="button_Suivante" Style="{StaticResource ButtonSuivPrec}" Margin="1128,414,10,0" Click="button_Suivante_Click" Height="73" VerticalAlignment="Top">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Ressources/Icones/suivantphoto128.png" Width="106" Height="66" />
             </StackPanel>
         </Button>
-        <Button x:Name="button_Precedent" Style="{StaticResource ButtonSuivPrec}" HorizontalAlignment="Left" Margin="506,414,0,0" VerticalAlignment="Top" Click="button_Precedent_Click" Width="110" Height="73">
+        <Button x:Name="button_Precedent" Style="{StaticResource ButtonSuivPrec}" HorizontalAlignment="Left" Margin="499,414,0,0" VerticalAlignment="Top" Click="button_Precedent_Click" Width="110" Height="73">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Ressources/Icones/precedentphoto128.png" Width="106" Height="65" />
             </StackPanel>

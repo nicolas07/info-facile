@@ -109,11 +109,11 @@ namespace WpfApplicationMobi.Photos
 
                 if (System.IO.File.Exists(tmp))
                 {
-                    button_Tablette.Content = "Supprimmer Dossier Tablette";
+                    button_Tablette.Content = "Supprimer du Dossier Tablette";
                 }
                 else
                 {
-                    button_Tablette.Content = "Ajouter Dossier Tablette";
+                    button_Tablette.Content = "Ajouter au Dossier Tablette";
                 }
 
             }
@@ -173,11 +173,11 @@ namespace WpfApplicationMobi.Photos
         {
             CustomPicture item = listView_fichier.SelectedItem as CustomPicture;
 
-            if (button_Tablette.Content.Equals("Supprimmer Dossier Tablette"))
+            if (button_Tablette.Content.Equals("Supprimer du Dossier Tablette"))
             {
                 System.IO.File.Delete(item.path);
             }
-            else if (button_Tablette.Content.Equals("Ajouter Dossier Tablette"))
+            else if (button_Tablette.Content.Equals("Ajouter au Dossier Tablette"))
             {
                 System.IO.File.Copy(item.path,string.Concat(dossierPhotosTablette + "\\" + item.nomfichier) ,true);
             }
