@@ -38,7 +38,7 @@ namespace WpfApplicationMobi.RecevoirMails
            
             mail = m;
             label_Date.Content = m.DateReception;
-            label_Expediteur.Content = m.Expediteur;
+            label_Expediteur.Text = m.Expediteur;
             label_Subject.Text = m.Objet;
             MainBrowser.NavigateToString(m.Message);
             worker.RunWorkerAsync();
@@ -99,6 +99,20 @@ namespace WpfApplicationMobi.RecevoirMails
             mshtml.IHTMLDocument2 documentText = (IHTMLDocument2)MainBrowser.Document;
             //this will access the document properties 
             //documentText.body.parentElement.style.overflow = "hidden";
+        }
+
+        private void button_Repondre_Click(object sender, RoutedEventArgs e)
+        {
+            List<string> exp = new List<string>();
+            exp.Add(mail.Expediteur);
+            Mail mailreponse = new Mail() { Destinataires = exp, Expediteur = "infofacile.tech@gmail.com", Objet = string.Concat("RE : ", mail.Objet) };
+            Uri uri = new Uri("./EnvoyerMail/PageSaisieMessage.xaml", UriKind.Relative);
+
+            WindowEnvoiMail winEnvoiMail = new WindowEnvoiMail(uri, mailreponse);
+            //Affichage de la WindowAccueil
+            winEnvoiMail.Show();
+            //Fermeture de la WindowContact
+            var window = Window.GetWindow(this);
         }
     }
 }

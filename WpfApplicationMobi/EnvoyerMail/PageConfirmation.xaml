@@ -11,7 +11,7 @@
 
     <Grid>
         <Label x:Name="label_Fin" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{StaticResource LabelGras}" Content="" HorizontalAlignment="Left" Margin="36,40,0,0" VerticalAlignment="Top" Width="386"/>
-        <Button x:Name="button_Retour" Style="{StaticResource ButtonFondViolet}" Content="Retour Menu Principal" Margin="0,177,141,0" VerticalAlignment="Top" Click="button_Retour_Click" Height="24" HorizontalAlignment="Right" Width="153"/>
+        <Button x:Name="button_Retour" Style="{StaticResource ButtonFondViolet}" Content="Retour Menu Principal" Margin="0,173,141,0" VerticalAlignment="Top" Click="button_Retour_Click" Height="24" HorizontalAlignment="Right" Width="153"/>
 
     </Grid>
 </Page>
