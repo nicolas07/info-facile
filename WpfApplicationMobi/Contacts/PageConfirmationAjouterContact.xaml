@@ -9,8 +9,8 @@
       Title="PageConfirmationAjouterContact">
 
     <Grid>
-        <Label x:Name="label_Fin" FontSize="15" FontWeight="Bold" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="42,98,0,0" VerticalAlignment="Top" Width="229"/>
-        <Button x:Name="button_Retour" Content="Retour Menu Principal" Style="{StaticResource ButtonFondViolet}" HorizontalAlignment="Left" Margin="80,178,0,0" VerticalAlignment="Top" Width="155" Click="button_Retour_Click" Height="29"/>
+        <Label x:Name="label_Fin" FontSize="15" FontWeight="Bold" Content="" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="42,98,41,0" VerticalAlignment="Top"/>
+        <Button x:Name="button_Retour" Content="Retour Menu Principal" Style="{StaticResource ButtonFondViolet}" Margin="60,178,61,0" VerticalAlignment="Top" Click="button_Retour_Click"/>
 
     </Grid>
 </Page>

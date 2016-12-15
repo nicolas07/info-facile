@@ -18,8 +18,8 @@
         <TextBox x:Name="textBox_Email" Style="{StaticResource TextBoxCustom}" HorizontalAlignment="Left" Height="30" Margin="189,293,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="268" TextChanged="TextBox_TextChanged"/>
         <TextBox x:Name="textBox_Telephone" Style="{StaticResource TextBoxCustom}" HorizontalAlignment="Left" Height="32" Margin="189,328,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="268" TextChanged="TextBox_TextChanged"/>
         <TextBox x:Name="textBox_Image" Style="{StaticResource TextBoxCustom}" HorizontalAlignment="Left" Height="54" Margin="189,365,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="268" TextChanged="TextBox_TextChanged" AcceptsReturn="True"/>
-        <Button x:Name="button_Ajouter" Style="{StaticResource ButtonFondViolet}" Content="Ajouter" HorizontalAlignment="Left" Margin="233,471,0,0" VerticalAlignment="Top" Width="114" Click="button_Ajouter_Click" Height="33"/>
-        <Button x:Name="button_ChoisirImage" Style="{StaticResource ButtonSuivPrec}" Content="Choisir Image" HorizontalAlignment="Left" Margin="462,365,0,0" VerticalAlignment="Top" Width="115" Click="button_ChoisirImage_Click" Height="32"/>
+        <Button x:Name="button_Ajouter" Style="{StaticResource ButtonFondViolet}" Content="Ajouter" HorizontalAlignment="Left" Margin="233,471,0,0" VerticalAlignment="Top" Width="115" Click="button_Ajouter_Click" />
+        <Button x:Name="button_ChoisirImage" Style="{StaticResource ButtonSuivPrec}" Content="Choisir Image" HorizontalAlignment="Left" Margin="462,365,0,0" VerticalAlignment="Top" Width="115" Click="button_ChoisirImage_Click"/>
         <Image x:Name="image_Preview" HorizontalAlignment="Left" Height="243" Margin="46,10,0,0" VerticalAlignment="Top" Width="411"/>
         <Label x:Name="label_Erreur" Content="" HorizontalAlignment="Left" Margin="46,433,0,0" VerticalAlignment="Top" Width="434" Foreground="Red"/>
 

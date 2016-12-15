@@ -34,8 +34,8 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <Image x:Name="image_fichier" HorizontalAlignment="Stretch" Height="396" Margin="506,10,10,0" VerticalAlignment="Top"/>
-        <Button x:Name="button_Tablette" Style="{StaticResource ButtonFondViolet}" Content="" HorizontalAlignment="Left" Margin="777,414,0,0" VerticalAlignment="Top" Width="191" Click="button_Tablette_Click" Height="35"/>
-        <Button x:Name="button_Supprimer" HorizontalAlignment="Left" Style="{StaticResource ButtonRetour}" Margin="777,454,0,0" VerticalAlignment="Top" Width="191" Height="34" Click="button_Supprimer_Click">
+        <Button x:Name="button_Tablette" Style="{StaticResource ButtonFondViolet}" Content="" HorizontalAlignment="Left" Margin="777,414,0,0" VerticalAlignment="Top" Width="191" Click="button_Tablette_Click"/>
+        <Button x:Name="button_Supprimer" HorizontalAlignment="Left" Style="{StaticResource ButtonRetour}" Margin="777,454,0,0" VerticalAlignment="Top" Width="191" Click="button_Supprimer_Click">
             <StackPanel Orientation="Horizontal" Width="119">
                 <Image Source="/Ressources/Icones/poubelle128.png" Width="41" Height="26" />
                 <Label>Supprimer</Label>

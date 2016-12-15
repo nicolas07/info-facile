@@ -31,19 +31,17 @@ namespace WpfApplicationMobi
             var current_page = FrameContacts.NavigationService.Content.GetType().Name.ToString();
 
             //Retour Page Details Contact vers Page Liste Contacts
-            if (current_page.Equals("PageDetailsContact")) {
+            if (current_page.Equals("PageDetailsContact") || current_page.Equals("PageAjouterContact")) {
                 FrameContacts.NavigationService.Navigate(new Uri("./Contacts/PageListeContacts.xaml", UriKind.Relative));
-            }
-
-            //Retour Page Liste Contacts vers Window Accueil
-            if (current_page.Equals("PageListeContacts"))
+            } else if (current_page.Equals("PageListeContacts"))
             {
+                //Retour Page Liste Contacts vers Window Accueil
                 WindowAccueil winAccueil = new WindowAccueil();
                 //Affichage de la WindowAccueil
                 winAccueil.Show();
                 //Fermeture de la WindowContacts
                 this.Close();
-            }
+            } 
         }
 
         private void ButtonAnnuler_Click(object sender, RoutedEventArgs e)

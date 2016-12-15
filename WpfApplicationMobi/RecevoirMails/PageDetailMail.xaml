@@ -9,7 +9,7 @@
       Title="PageDetailMail" Height="514" Width="1248" >
 
     <Grid>
-        <TextBlock x:Name="label_Expediteur" Style="{StaticResource TextBlockGras}" Text="Label" HorizontalAlignment="Left" Margin="109,24,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.467,-1.025" Width="256" Height="53" TextWrapping="WrapWithOverflow"/>
+        <TextBlock x:Name="label_Expediteur" Style="{StaticResource TextBlockGras}" Text="Label" HorizontalAlignment="Left" Margin="109,29,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.467,-1.025" Width="256" Height="53" TextWrapping="WrapWithOverflow"/>
         <Label x:Name="label_Date"  Style="{StaticResource LabelGras}" Content="Label" HorizontalAlignment="Left" Margin="109,82,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.467,-1.025" Width="256"/>
         <TextBlock x:Name="label_Subject"  Style="{StaticResource TextBlockGras}" Text="Label" HorizontalAlignment="Left" Margin="109,118,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.467,-1.025" Width="256" Height="62" TextWrapping="WrapWithOverflow" />
         <WebBrowser Loaded="MainBrowser_Loaded"
@@ -31,7 +31,7 @@
         <Label x:Name="label" Style="{StaticResource LabelGras}" Content="Expediteur : " HorizontalAlignment="Left" Margin="10,24,0,0" VerticalAlignment="Top" RenderTransformOrigin="-5.579,-7.885" Width="94"/>
         <Label x:Name="label_Copy" Style="{StaticResource LabelGras}" Content="Date : " HorizontalAlignment="Left" Margin="10,82,0,0" VerticalAlignment="Top" RenderTransformOrigin="-5.579,-7.885" Width="94"/>
         <Label x:Name="label_Copy1" Style="{StaticResource LabelGras}" Content="Objet : " HorizontalAlignment="Left" Margin="10,113,0,0" VerticalAlignment="Top" RenderTransformOrigin="-5.579,-7.885" Width="94"/>
-        <Button x:Name="button_Repondre" Style="{StaticResource ButtonFondVert}" Content="Répondre" HorizontalAlignment="Left" Margin="109,221,0,0" VerticalAlignment="Top" Width="119" Height="28" Click="button_Repondre_Click"/>
+        <Button x:Name="button_Repondre" Style="{StaticResource ButtonFondVert}" Content="Répondre" HorizontalAlignment="Left" Margin="109,221,0,0" VerticalAlignment="Top" Width="119" Click="button_Repondre_Click"/>
 
     </Grid>
 </Page>

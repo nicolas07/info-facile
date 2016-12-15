@@ -247,11 +247,11 @@ namespace WpfApplicationMobi.Photos
             string[] files = null;
             if (item.parent != null)
             {
-                files = Directory.GetFiles(dossierImage +"\\"+ item.parent + "\\" + item.nom + "\\");
+                files = Directory.GetFiles(dossierImage +"\\"+ item.parent + "\\" + item.nom + "\\", "*.jpg");
             }
             else
             {
-                files = Directory.GetFiles(dossierImage + "\\" + item.nom + "\\");
+                files = Directory.GetFiles(dossierImage + "\\" + item.nom + "\\", "*.jpg");
             }
 
             List<CustomPicture> tutu = new List<CustomPicture>();

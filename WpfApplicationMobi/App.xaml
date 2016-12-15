@@ -8,6 +8,7 @@
             <Setter Property="Background" Value="DarkCyan"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="Height" Value="35"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -24,8 +25,8 @@
             <Setter Property="Background" Value="#FFCCE6FF"/>
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontWeight" Value="Bold"></Setter>
-            <Setter Property="Width" Value="75"/>
-            <Setter Property="Height" Value="35"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Width" Value="125"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -42,6 +43,8 @@
             <Setter Property="Background" Value="#FFF77C7C"/>
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="Width" Value="125"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -58,6 +61,7 @@
             <Setter Property="Background" Value="#FFFFA366"/>
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="Height" Value="35"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -74,6 +78,7 @@
             <Setter Property="Background" Value="#FF5CD65C"/>
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="Height" Value="35"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -90,6 +95,7 @@
             <Setter Property="Background" Value="#FFD966FF"/>
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontWeight" Value="Bold"></Setter>
+            <Setter Property="Height" Value="35"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">

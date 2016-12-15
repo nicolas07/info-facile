@@ -10,9 +10,9 @@
       Title="PageSaisieMessage">
 
     <Grid>
-        <Label x:Name="label" Style="{StaticResource LabelGras}" Content="Message" Margin="25,16,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.846,-0.918" HorizontalAlignment="Left" Width="94"/>
-        <TextBox x:Name="textBox_Message" Style="{StaticResource TextBoxCustom}" HorizontalAlignment="Left" Margin="124,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="452" Width="515" TextChanged="TextBox_TextChanged" AcceptsReturn="True" AcceptsTab="True"/>
-        <Button x:Name="button_Envoyer" Style="{StaticResource ButtonFondViolet}" Content="Envoyer" Margin="645,0,10,467" VerticalAlignment="Bottom" Click="button_Envoyer_Click" Height="26"  />
+        <Label x:Name="label" Style="{StaticResource LabelGras}" Content="Message" Margin="25,75,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.846,-0.918" HorizontalAlignment="Left" Width="94"/>
+        <TextBox x:Name="textBox_Message" Style="{StaticResource TextBoxCustom}" HorizontalAlignment="Left" Margin="119,75,0,10" TextWrapping="Wrap" Width="515" TextChanged="TextBox_TextChanged" AcceptsReturn="True" AcceptsTab="True"/>
+        <Button x:Name="button_Envoyer" Style="{StaticResource ButtonFondViolet}" Content="Envoyer" Margin="645,0,10,404" VerticalAlignment="Bottom" Click="button_Envoyer_Click"/>
         <Label x:Name="label_Erreur" HorizontalAlignment="Left" Margin="148,6,0,0" VerticalAlignment="Top" Width="197" Foreground="Red"/>
 
     </Grid>

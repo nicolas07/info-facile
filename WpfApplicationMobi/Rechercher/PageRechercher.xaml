@@ -10,8 +10,8 @@
       Title="PageRechercher">
 
     <Grid>
-        <TextBox x:Name="textBoxRecherche" Style="{StaticResource TextBoxCustom}" HorizontalAlignment="Left" Height="36" Margin="10,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="443" HorizontalContentAlignment="Center" TextChanged="textBoxRecherche_TextChanged"/>
-        <Button x:Name="buttonRechercher" Style="{StaticResource ButtonFondVert}" Content="Rechercher" HorizontalAlignment="Left" Margin="180,172,0,0" VerticalAlignment="Top" Width="103" HorizontalContentAlignment="Center" FontSize="15" FontWeight="Bold" Click="buttonRechercher_Click" Height="33"/>
+        <TextBox x:Name="textBoxRecherche" Style="{StaticResource TextBoxCustom}" Height="36" Margin="10,116,10,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalContentAlignment="Center" TextChanged="textBoxRecherche_TextChanged"/>
+        <Button x:Name="buttonRechercher" Style="{StaticResource ButtonFondVert}" Content="Rechercher" HorizontalAlignment="Left" Margin="180,172,0,0" VerticalAlignment="Top" Width="103" HorizontalContentAlignment="Center" FontSize="15" FontWeight="Bold" Click="buttonRechercher_Click"/>
         <Label x:Name="labelErreurRecherche" HorizontalAlignment="Center" Margin="10,75,10,0" VerticalAlignment="Top" Height="36" Width="443"  FontSize="15" FontWeight="Bold" Foreground="Red"/>
         <Label x:Name="labelSaisie" Content="Veuillez saisir votre recherche : " FontWeight="Bold" HorizontalAlignment="Center" Margin="10,34,10,0" VerticalAlignment="Top" Height="36" Width="443"  FontSize="15" Foreground="Black" HorizontalContentAlignment="Center"/>
 

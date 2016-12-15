@@ -17,13 +17,13 @@
         <Label x:Name="labelTelephone" Style="{StaticResource LabelGras}" Content="Label" HorizontalAlignment="Left" Margin="377,385,0,0" VerticalAlignment="Top" Width="315"/>
         <Label x:Name="labelNom" Style="{StaticResource LabelGras}" Content="Label" HorizontalAlignment="Left" Margin="377,300,0,0" VerticalAlignment="Top" Width="315"/>
         <Image x:Name="image_Contact" HorizontalAlignment="Left" Height="243" Margin="250,27,0,0" VerticalAlignment="Top" Width="442"/>
-        <Button x:Name="button_EnvoyerEmail" Style="{StaticResource ButtonFondVert}" HorizontalAlignment="Left" Margin="899,340,0,0" VerticalAlignment="Top" Width="191" HorizontalContentAlignment="Stretch" Click="button_EnvoyerEmail_Click" Height="34">
+        <Button x:Name="button_EnvoyerEmail" Style="{StaticResource ButtonFondVert}" HorizontalAlignment="Left" Margin="899,340,0,0" VerticalAlignment="Top" Width="191" HorizontalContentAlignment="Stretch" Click="button_EnvoyerEmail_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Ressources/Icones/envoyermail128.png" Width="30" Height="30" RenderTransformOrigin="1.238,3.131" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <TextBlock Text="Envoyer un Mail" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"/>
             </StackPanel>
         </Button>
-        <Button x:Name="button_Appeler" HorizontalAlignment="Left" Style="{StaticResource ButtonAnnuler}" Margin="899,385,0,0" VerticalAlignment="Top" Width="191" HorizontalContentAlignment="Stretch" Click="button_Appeler_Click" Height="34">
+        <Button x:Name="button_Appeler" HorizontalAlignment="Left" Style="{StaticResource ButtonAnnuler}" Margin="899,385,0,0" VerticalAlignment="Top" Width="191" HorizontalContentAlignment="Stretch" Click="button_Appeler_Click">
             <StackPanel Orientation="Horizontal" Width="185" Height="31" Margin="0,0,2,0">
                 <Image Source="/Ressources/Icones/appel128.png" Width="30" Height="30" RenderTransformOrigin="1.238,3.131" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <TextBlock Text="Appeler" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"/>

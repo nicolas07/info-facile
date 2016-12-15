@@ -10,8 +10,8 @@
       Title="PageSaisieDestinataire">
 
     <Grid>
-        <Label x:Name="label" Style="{StaticResource LabelGras}" Content="Destinataire" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Height="30" Width="125"/>
-        <TextBox Style="{StaticResource TextBoxCustom}" x:Name="textBox_Destinataire" HorizontalAlignment="Left" Margin="158,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.212,-2.066" Height="30" Width="428" TextAlignment="Justify"  VerticalContentAlignment="Center" AcceptsReturn="True" TextChanged="TextBox_TextChanged"/>
+        <Label x:Name="label" Style="{StaticResource LabelGras}" Content="Destinataire" HorizontalAlignment="Left" Margin="10,74,0,0" VerticalAlignment="Top" Height="30" Width="125"/>
+        <TextBox Style="{StaticResource TextBoxCustom}" x:Name="textBox_Destinataire" HorizontalAlignment="Left" Margin="158,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.212,-2.066" Height="30" Width="428" TextAlignment="Justify"  VerticalContentAlignment="Center" AcceptsReturn="True" TextChanged="TextBox_TextChanged"/>
         <ListView x:Name="listViewContacts" HorizontalAlignment="Left" Margin="10,115,0,10" Width="576" ScrollViewer.VerticalScrollBarVisibility="Hidden">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -29,18 +29,18 @@
                 </Style>
             </ListView.ItemContainerStyle>
         </ListView>
-        <Button x:Name="button_Precedent" Style="{StaticResource ButtonSuivPrec}" HorizontalAlignment="Left" Margin="591,115,0,0" VerticalAlignment="Top" Width="33" RenderTransformOrigin="0.5,0.5" Height="106" Click="button_Precedent_Click">
+        <Button x:Name="button_Precedent" Style="{StaticResource ButtonSuivPrec}" HorizontalAlignment="Left" Margin="591,160,0,0" VerticalAlignment="Top" Width="33" RenderTransformOrigin="0.5,0.5" Height="106" Click="button_Precedent_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Ressources/Icones/precedent128.png" Width="30" Height="60"/>
             </StackPanel>
         </Button>
-        <Button x:Name="button_Suivant" HorizontalAlignment="Left" Style="{StaticResource ButtonSuivPrec}" Margin="591,398,0,0" VerticalAlignment="Top" Width="33" RenderTransformOrigin="0.5,0.5" Height="106" Click="button_Suivant_Click">
+        <Button x:Name="button_Suivant" HorizontalAlignment="Left" Style="{StaticResource ButtonSuivPrec}" Margin="591,342,0,0" VerticalAlignment="Top" Width="33" RenderTransformOrigin="0.5,0.5" Height="106" Click="button_Suivant_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Ressources/Icones/suivant128.png" Width="30" Height="60"/>
             </StackPanel>
         </Button>
-        <Button x:Name="button_Suivant_Etape" Style="{StaticResource ButtonFondViolet}" Content="Suivant" HorizontalAlignment="Left" Margin="591,37,0,0" VerticalAlignment="Top" Width="112" RenderTransformOrigin="-0.421,-0.227" Click="button_Suivant_Etape_Click" Height="30"/>
+        <Button x:Name="button_Suivant_Etape" Style="{StaticResource ButtonFondViolet}" Content="Suivant" HorizontalAlignment="Left" Margin="602,72,0,0" VerticalAlignment="Top" Width="112" RenderTransformOrigin="-0.421,-0.227" Click="button_Suivant_Etape_Click" />
         <Label x:Name="label_Erreur" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="2.836,0.728" Margin="158,10,0,0" Width="240" Height="23" Foreground="Red" />
-        <Label x:Name="label_listevide" Content="Label" HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" RenderTransformOrigin="-5.658,0.923" Width="402" Height="42"/>
+        <Label x:Name="label_listevide" Content="Label" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-5.658,0.923" Width="402" Height="42"/>
     </Grid>
 </Page>
