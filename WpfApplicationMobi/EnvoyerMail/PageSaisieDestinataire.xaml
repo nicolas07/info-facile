@@ -40,7 +40,7 @@
             </StackPanel>
         </Button>
         <Button x:Name="button_Suivant_Etape" Style="{StaticResource ButtonFondViolet}" Content="Suivant" HorizontalAlignment="Left" Margin="602,72,0,0" VerticalAlignment="Top" Width="112" RenderTransformOrigin="-0.421,-0.227" Click="button_Suivant_Etape_Click" />
-        <Label x:Name="label_Erreur" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="2.836,0.728" Margin="158,10,0,0" Width="240" Height="23" Foreground="Red" />
-        <Label x:Name="label_listevide" Content="Label" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-5.658,0.923" Width="402" Height="42"/>
+        <Label x:Name="label_Erreur" VerticalAlignment="Top" RenderTransformOrigin="2.836,0.728" Margin="21,10,25,0" Height="42" Foreground="Red" FontSize="15" FontWeight="Bold" />
+        <Label x:Name="label_listevide" Content="Label" Margin="10,10,10,0" VerticalAlignment="Top" RenderTransformOrigin="-5.658,0.923" Height="42"/>
     </Grid>
 </Page>

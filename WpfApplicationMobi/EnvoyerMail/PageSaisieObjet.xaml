@@ -13,7 +13,7 @@
         <Label x:Name="label" Style="{StaticResource LabelGras}" Content="Objet" HorizontalAlignment="Left" Margin="59,72,0,0" VerticalAlignment="Top" Width="60"/>
         <TextBox x:Name="textBox_Objet" Style="{StaticResource TextBoxCustom}" Height="26" Margin="149,75,119,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="TextBox_TextChanged"/>
         <Button x:Name="button_Suivant_Etape" Style="{StaticResource ButtonFondViolet}" Content="Suivant" HorizontalAlignment="Left" Margin="511,70,0,0" VerticalAlignment="Top" Width="85" Click="button_Suivant_Etape_Click"/>
-        <Label x:Name="label_Erreur" HorizontalAlignment="Left" Margin="149,46,0,0" VerticalAlignment="Top" Width="190" Foreground="Red"/>
+        <Label x:Name="label_Erreur" HorizontalAlignment="Left" Margin="28,10,0,0" VerticalAlignment="Top" Width="568" Foreground="Red" FontSize="15" FontWeight="Bold" Height="46"/>
 
     </Grid>
 </Page>
