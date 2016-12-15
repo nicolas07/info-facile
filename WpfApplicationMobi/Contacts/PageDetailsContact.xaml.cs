@@ -48,6 +48,8 @@ namespace WpfApplicationMobi.Contacts
             winEnvoiMail.Show();
             //Fermeture de la WindowContact
             var window = Window.GetWindow(this);
+
+            window.Close();
         }
     }
 }
